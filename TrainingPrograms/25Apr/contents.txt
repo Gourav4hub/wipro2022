@@ -1,0 +1,23 @@
+Types Files : 1. Text Files 
+              2. Binary Files (jpg,png,mp3,mp4,docx,pdf...)
+
+HTML : HyperText Markup Language
+
+    <b>Wipro Training</b>
+
+   Via Tags we decorate our contents.
+
+   Pairing Tags :    <b> text  </b> , <i> text </i>
+   Non Pairing Tag :  <br> , <hr>
+
+   Block Element
+        1. It always starts with a new line.
+        2. It put a margin before and after.
+        3. It takes all page width
+   Inline Element
+        1. It does not start with a new line.
+        2. It takes as much width as necessary (according to the content)
+
+
+        Room : Width : 12feet
+            Bed  : Width : 6feet    
