@@ -1,0 +1,23 @@
+CSS : Cascading Stylesheet
+
+    CSS Properties
+
+        color:'red'
+        font-size:'20px'
+        border:2px solid red;
+
+Ways to apply CSS in HTML Page : 
+
+    1. Inline CSS : for inline css we use style attribute inside any tag and specify the CSS property. but the scope of inline css is only within the tag.
+
+        <b style="color:red">Wipro Training</b>
+
+    2. Internal CSS : for internal css we use style tag in which we define the selectors.
+
+        1. Tag selector : tagname
+        2. Id selector
+        3. Class selector
+
+
+
+    3. External CSS
