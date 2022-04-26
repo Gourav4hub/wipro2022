@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Student Registeration Form</title>
+    </head>
+    <body>
+        <h1>Student Registeration</h1>
+
+        <form action="success.html" method="get">
+            
+            <label for="student_name">Student Name : </label>
+            <input id="student_name" type="text" placeholder="Your Name" required> <br><br>
+
+            <label for="student_email">Student Email : </label>
+            <input id="student_email" type="email" placeholder="Your Email" required> <br><br>
+
+            <label for="student_pass">Student Password : </label>
+            <input id="student_pass" type="password" placeholder="Your Password" required> <br><br>
+
+            <b>Gender : </b>
+            <label for="gender_male">Male : </label>
+            <input id="gender_male" name="gender" type="radio" checked required>
+            <label for="gender_female">FeMale : </label>
+            <input id="gender_female" name="gender" type="radio" required>            
+            <br><br>
+
+
+            <b>Hobbies : </b>
+            <label for="hobby_music">Music : </label>
+            <input id="hobby_music" type="checkbox">
+            <label for="hobby_games">Games : </label>
+            <input id="hobby_games" type="checkbox" checked> 
+            <label for="hobby_travel">Travelling : </label>
+            <input id="hobby_travel" type="checkbox">            
+            <br><br>
+
+            <label for="student_dob">Student DOB : </label>
+            <input id="student_dob" type="date" required> <br><br>
+
+            <label for="student_time">Student Time : </label>
+            <input id="student_time" type="time" required> <br><br>
+
+            <label for="student_city">Student City : </label>
+            <select required>
+                <option value="">Choose City</option>
+                <option value="123">Indore</option>
+                <option value="432">Ujjain</option>
+                <option value="321">Delhi</option>
+                <option value="789">Pune</option>
+                <option value="765">Dewas</option>
+                <option value="125">Gwalior</option>
+            </select> <br><br>
+
+            <label for="student_img">Student Image : </label>
+            <input id="student_img" type="file" required> <br><br>
+
+            <label for="student_age">Student Age : </label>
+            <input id="student_age" type="number" min="18" max="45" required> <br><br>
+
+            <label for="student_age2">Student Age : </label>
+            <input id="student_age2" type="range" min="18" max="45" required> <br><br>
+
+            <label for="student_address">Student Address : </label>
+            <textarea required></textarea> <br><br>
+
+            <label for="student_city2">Student City : </label>
+            <input list="citylist">
+            <datalist id="citylist">                
+                <option value="Indore">
+                <option value="Ujjain">
+                <option value="Delhi">
+                <option value="Pune">
+                <option value="Dewas">
+                <option value="Gwalior">
+                    <option value="Udaipur">
+                        <option value="Goa">
+            </datalist>
+            <br><br>
+
+
+
+
+
+
+
+
+
+
+            <input type="submit">
+        </form>
+    </body>
+</html>
