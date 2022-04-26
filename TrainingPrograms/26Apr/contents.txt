@@ -15,8 +15,10 @@ Ways to apply CSS in HTML Page :
     2. Internal CSS : for internal css we use style tag in which we define the selectors.
 
         1. Tag selector : tagname
-        2. Id selector
-        3. Class selector
+        2. Id selector : #idname
+        3. Class selector : .classname
+
+        the scope of internal css only within the page.
 
 
 
