@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+               div b{ /* Descendant Selector */
+                   color:red
+               }
+
+               div > b{ /* child Selector */
+                   background-color: blueviolet;
+               }
+
+               #d2 b
+               {
+                   background-color: aqua;
+               }
+
+               .p2 b
+               {
+                   text-decoration: overline;
+               }
+
+               #d2 .p2 b
+               {
+                   text-shadow: green 1px 2px;
+               }
+
+               b + p { /* Adjacent sibling selector */
+                   background-color: bisque;
+               }
+               
+               h2 ~ p /* General sibling selector */
+               {
+                   border:2px red solid;
+               }
+
+        </style>
+
+    </head>
+    <body>
+        <h1>CSS Combinators</h1>
+        <hr>
+        <div>            
+            <h2>Heading 1</h2>
+            <p>
+                <b>My name is vikas.</b> and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.
+            </p>
+        </div>
+
+        <div id="d2">
+            <h2>Heading 2</h2>
+            <p>
+                <b>My name is vikas.</b> and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.
+            </p>
+            <p class="p2">
+                <b>My name is vikas.</b> and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.
+            </p>
+            <p>
+                <b>My name is vikas.</b> and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.
+            </p>
+        </div>
+
+        <div>
+            <h2>Heading 3</h2>
+            <b>My name is vikas.</b> 
+            <p class="p2">
+                <b>I live in pune.My name is vikas. and I live in pune.</b>My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.My name is vikas. and I live in pune.
+            </p>
+        </div>
+
+        <b>Thanks for Visit.</b>
+
+    </body>
+</html>
