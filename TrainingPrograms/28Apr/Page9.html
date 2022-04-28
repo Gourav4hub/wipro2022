@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Javascript</title>
+        <script>           
+            function process()
+            {
+                var x = document.getElementById('t1').value;
+                var y = document.getElementById('t2').value;
+                var z = 0;
+                var op = 0;
+                var objs = document.getElementsByName('op');
+                for(var obj of objs)
+                {
+                    if(obj.checked){
+                        op = obj.value;
+                        break;
+                    }
+                }
+
+                switch(op)
+                {
+                   case "1": z = parseFloat(x) + parseFloat(y);
+                             break;   
+                   case "2": z = parseFloat(x) - parseFloat(y);
+                             break;        
+                   case "3": z = parseFloat(x) * parseFloat(y);
+                             break;
+                   case "4": z = parseFloat(x) / parseFloat(y);
+                             break;
+                   case "5": z = parseFloat(x) % parseFloat(y);
+                             break;       
+                }
+               document.getElementById('result').innerText = z;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Calculation Demo</h1>        
+
+        <input type="text" id="t1" placeholder="First Number">
+        &nbsp;
+        <input type="text" id="t2" placeholder="Second Number">
+        
+        <br><br>
+        
+        <input type="radio" name="op" value="1" checked> &nbsp; Addition <br>
+
+        <input type="radio" name="op" value="2"> &nbsp; Subtraction <br>
+
+        <input type="radio" name="op" value="3"> &nbsp; Multiply <br>
+
+        <input type="radio" name="op"  value="4"> &nbsp; Divide <br>
+
+        <input type="radio" name="op" value="5"> &nbsp; Modulus <br>
+
+        <br>
+        <button onclick="process()">Calculate</button>
+        &nbsp;&nbsp;
+        <b>Result : <span id="result">0</span> </b>
+       
+    </body>
+</html>
