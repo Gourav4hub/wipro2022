@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Javascript</title>
+        <script>
+            function addition()
+            {
+                var x = document.getElementById('t1').value;
+                var y = document.getElementById('t2').value;
+
+                // parseInt() , parseFloat()
+                var z = parseInt(x) + parseInt(y);
+                
+                document.getElementById('result').innerText = z;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Calculation Demo</h1>        
+
+        <input type="text" id="t1" placeholder="First Number">
+        &nbsp;
+        <input type="text" id="t2" placeholder="Second Number">
+        
+        <br><br>
+        <b>Result : <span id="result">0</span> </b>
+        <br><br>
+
+        <button onclick="addition()">Addition</button>
+    </body>
+</html>

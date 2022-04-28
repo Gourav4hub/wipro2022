@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Javascript</title>
+        <script>
+            function process()
+            {
+                var x = document.getElementById('t1').value;
+                var y = document.getElementById('t2').value;
+                var z = 0;
+                var op = document.getElementById('operation').value;
+                
+                switch(op)
+                {
+                   case "1": z = parseFloat(x) + parseFloat(y);
+                             break;   
+                   case "2": z = parseFloat(x) - parseFloat(y);
+                             break;        
+                   case "3": z = parseFloat(x) * parseFloat(y);
+                             break;
+                   case "4": z = parseFloat(x) / parseFloat(y);
+                             break;
+                   case "5": z = parseFloat(x) % parseFloat(y);
+                             break;       
+                }
+               document.getElementById('result').innerText = z;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Calculation Demo</h1>        
+
+        <input type="text" id="t1" placeholder="First Number">
+        &nbsp;
+        <input type="text" id="t2" placeholder="Second Number">
+        
+        <br><br>
+        <select id="operation" onchange="process()">
+            <option value="0">Choose Operation</option>
+            <option value="1">Addition</option>
+            <option value="2">Subtraction</option>
+            <option value="3">Multiply</option>
+            <option value="4">Division</option>
+            <option value="5">Modulus</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;
+        <b>Result : <span id="result">0</span> </b>
+       
+    </body>
+</html>
