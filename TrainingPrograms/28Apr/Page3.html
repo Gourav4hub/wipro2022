@@ -5,15 +5,24 @@
             function fun1()            
             {
                 var obj = document.getElementById('lbl');
-                alert(obj)
+                //var data = obj.innerText
+                var data = obj.innerHTML
+                alert(data)
             } 
+
+            function fun2()
+            {
+                var obj = document.getElementById('lbl');
+                //obj.innerText = "<i>My Name is Gourav !</i>"
+                obj.innerHTML = "<i>My Name is Gourav !</i>"
+            }
         </script>
     </head>
 
     <body>
         <h1>Javascript Page</h1>        
         <p>
-            <b id="lbl">Wipro Training....</b>
+            <b id="lbl"> <u> Wipro Training.... </u> </b>
         </p>
         <ol>
             <li>indore</li>
@@ -27,9 +36,9 @@
             <li>jitendra</li>
         </ul>
         <hr>
-        <button onclick="alert('Hello Everyone !')">Okay</button>
+        <button onclick="fun2()">Change Data</button>
         &nbsp;
-        <button onclick="fun1()">Okay</button>
+        <button onclick="fun1()">Get Data</button>
     </body>
 </html>
 
