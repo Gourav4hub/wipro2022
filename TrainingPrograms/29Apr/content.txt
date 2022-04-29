@@ -1,0 +1,25 @@
+C : 
+    Array : Collection of Similar type of data.
+    Structure : 
+ 
+    Array of student structure variables
+
+C++ : 
+    Array : Collection of Similar type of data.
+    Class : 
+
+    Array of student objects
+
+***************************************************************
+
+var num = 100;
+    Array : Collection of Data.
+
+    var arr = []
+    var arr = [34,54,65,22,31]
+
+
+
+
+
+
