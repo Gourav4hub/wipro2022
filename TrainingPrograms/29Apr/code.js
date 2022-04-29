@@ -7,6 +7,7 @@ var branchBox = undefined;
 var oopsBox = undefined;
 var compilerBox = undefined;
 var javaBox = undefined;
+var tbBox = undefined;
 
 function init()
 {
@@ -16,6 +17,7 @@ function init()
     oopsBox = document.getElementById('oops');
     compilerBox = document.getElementById('compiler');
     javaBox = document.getElementById('java');
+    tbBox = document.getElementById('tb');
     console.log('Initialization Done !')
 }
 
@@ -27,6 +29,30 @@ function clearBoxes()
     oopsBox.value='';
     compilerBox.value='';
     javaBox.value='';
+}
+
+function addNewRow(ob)
+{
+    var tr = document.createElement('tr');
+    var values = Object.values(ob)
+    //console.log(values)
+    for(var value of values)
+    {
+        var td = document.createElement('td');
+        td.innerText = value;
+        tr.appendChild(td);
+    }
+
+    var total = ob.oops + ob.compiler + ob.java
+    var td1 = document.createElement('td');
+    td1.innerText = total
+    tr.appendChild(td1);
+
+    var td2 = document.createElement('td');
+    td2.innerText = (total/3).toFixed(2);
+    tr.appendChild(td2);
+
+    tbBox.appendChild(tr);
 }
 
 function addData()
@@ -44,4 +70,6 @@ function addData()
     }
     students.push(ob);
     clearBoxes();
+    addNewRow(ob);
 }
+
