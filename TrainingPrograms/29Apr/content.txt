@@ -17,6 +17,26 @@ var num = 100;
 
     var arr = []
     var arr = [34,54,65,22,31]
+************************************************************
+
+JavaScript Object
+
+    employeeName
+    phone
+    salary
+    email
+
+    var ob = {
+        'Vikas Parmar' , '9876549878' , 45899 , 'vikas@gmail.com'
+    }
+
+
+
+
+
+
+
+
 
 
 

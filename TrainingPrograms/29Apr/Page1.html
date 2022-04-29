@@ -1,13 +1,14 @@
 <html>
     <head>
         <script src="./code.js"></script>
+        
     </head>
-    <body>
+    <body onload="init()">
         <h1>Student Exam Entry Form</h1>
         <hr>
-        <input type="text" placeholder="Roll Number">&nbsp;
-        <input type="text" placeholder="Student Name">&nbsp;
-        <select>
+        <input type="text" id="roll" placeholder="Roll Number">&nbsp;
+        <input type="text" id="name" placeholder="Student Name">&nbsp;
+        <select id="branch">
             <option value="">Choose Branch</option>
             <option value="CS">Computer Science</option>
             <option value="IT">Information Technology</option>
@@ -15,12 +16,12 @@
             <option value="ME">Mechanical</option>
         </select><br><br>
 
-        <input type="number" min="0" max="100" placeholder="OOPs"/> &nbsp;
-        <input type="number" min="0" max="100" placeholder="Compiler"/> &nbsp;
-        <input type="number" min="0" max="100" placeholder="Java Language"/> &nbsp;
+        <input type="number" id='oops' min="0" max="100" placeholder="OOPs"/> &nbsp;
+        <input type="number" id="compiler" min="0" max="100" placeholder="Compiler"/> &nbsp;
+        <input type="number" id="java" min="0" max="100" placeholder="Java Language"/> &nbsp;
 
         <br><br>
-        <button>Add Data</button>
+        <button onclick="addData()">Add Data</button>
         <hr>
 
         <table border="1" align="center" cellpadding="8" cellspacing="6">
