@@ -21,7 +21,18 @@ ECMAScript
     Transpiler : Babel
 
 
+***********************************
 
+                         Person
+                            name                         
+                            age
+                            phone
+
+        Student          Faculty            Driver                 
+            roll            facid               drivinglicence      
+            marks           salary              aadhar card         
+
+    CS             IT         
 
 
 
