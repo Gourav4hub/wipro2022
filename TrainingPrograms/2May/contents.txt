@@ -1,0 +1,28 @@
+JavaScript : Client-Side Scripting Language.
+
+Google : V8Engine : Execution Environment for Javascript.
+         Open Source
+         C/C++
+
+    NodeJS  
+
+      npm install -g typescript
+      npm install -g @angular/cli 
+      ng version
+
+****************************************************
+ECMAScript
+  ES5(Browser) , ES6 , ES7, ES8
+
+    ng new firstpro
+
+    Angular : TypeScript
+
+    Transpiler : Babel
+
+
+
+
+
+
+        
