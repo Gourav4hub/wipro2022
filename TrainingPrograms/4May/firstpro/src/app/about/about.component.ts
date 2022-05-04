@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class AboutComponent 
+{
+  public numbers = [67,55,44,56,67,82,43,22,44,65]
+  
 }

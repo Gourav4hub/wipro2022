@@ -53,7 +53,58 @@ app-routing.module.ts	>>  Routing File .... In which we define 							routing se
 	
 	app.module.ts		>> All Modules , Components ....
 	
-****************************************************************************	
+****************************************************************************
+
+	ng generate component about
+	
+	ng g c about
+**********************************************************************
+
+Binding :   1. One Way Binding
+				1. Code To View
+						Data Binding : Interopolation {{ variable_name }}
+				2. View To Code
+						Event Binding : (click)="function()"
+				
+		  2. Two Way Binding : Code To View To Code
+		  
+*******************************************************************
+
+	Directives : *ngFor		  
+		  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
 
 
 

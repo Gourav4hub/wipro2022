@@ -1,2 +1,13 @@
 <h2>About Component</h2>
+<!-- {{numbers}} -->
+
+<div *ngFor="let num of numbers">
+    <b> 
+        {{num}} &nbsp;
+
+        <span *ngIf="num%2==0">Even Number</span>
+        <span *ngIf="num%2!=0">Odd Number</span>
+    </b>
+</div> 
+
 <app-contact></app-contact>
