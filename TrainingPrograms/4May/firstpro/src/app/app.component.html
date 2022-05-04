@@ -1,5 +1,10 @@
 <h2>App Component</h2>
-<h3>Wipro Java Training</h3>
+<h3>{{title}} , {{num}}</h3>
+<h4>Roll : {{student.roll}} , Name : {{student.name}} , Marks : {{student.marks}}</h4>
+
+<button (click)="handleChangeTitle()">Change Title</button>
+&nbsp;
+<button (click)="handleChangeNum()">Increment Num</button>
 
 <app-about></app-about>
 <hr>
