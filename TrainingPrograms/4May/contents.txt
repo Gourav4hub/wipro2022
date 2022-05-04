@@ -1,0 +1,111 @@
+
+	Angular is a Javascript Framework for building Single Page Component based Application.
+	
+	Component : HTML / CSS / Coding (TS)
+
+	FrameWork
+	
+	Working in a Specific Pattern
+	Provide Inbuilt Module
+	
+	Java : Spring
+	PHP : Codeignitor, Laravel, Phalcon ....
+	Python : Flask , Django
+	Ruby : Rail
+	
+	******************************************************
+	
+	
+	dependencies:
+		
+			npm install --save <ModuleName>
+			
+	devDependencies
+	
+			npm  install --save-dev <ModuleName>	
+			
+************************************************************
+
+	ng serve
+	
+	npm start			
+****************************		
+	
+		Project >>> index.html
+		
+		Main Component : app Component	
+		
+		
+					Multiple components
+****************************************************
+
+
+
+
+app-routing.module.ts	>>  Routing File .... In which we define 							routing settings.
+	
+	app.component.html  >> Component HTML File ..... 
+	
+	app.component.css   >> Component CSS File ..... 
+	
+	app.component.ts	>> Component Execution File
+	
+	
+	app.module.ts		>> All Modules , Components ....
+	
+****************************************************************************	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
