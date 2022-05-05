@@ -25,7 +25,22 @@
 <br>
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" class="btn btn-info">Add Employee</button>
+        <div *ngIf="deleteInfo.isdelete==false">
+        <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" class="btn btn-info">Add 
+            Employee</button>
+        </div>  
+        
+        <div *ngIf="deleteInfo.isdelete==true">
+            &nbsp;&nbsp;
+            <b class="text-danger">
+              Are you sure to delete ({{deleteInfo.employee.empname}}) ?  
+            </b>
+            &nbsp;&nbsp;    
+            <button (click)="delete()" class="btn btn-info">Delete 
+                Employee</button>
+            &nbsp;    
+            <button (click)="cancelDelete()" class="btn btn-primary">Cancel</button>
+        </div> 
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 
@@ -41,6 +56,7 @@
             <th>Employee Name</th>
             <th>Department</th>
             <th>Salary</th>
+            <th>Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -49,6 +65,9 @@
             <td>{{emp.empname}}</td>
             <td>{{emp.department}}</td>
             <td>{{emp.salary}}</td>
+            <td class="text-center">
+                <button (click)="deleteEmployee(emp)" class="btn btn-warning">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
