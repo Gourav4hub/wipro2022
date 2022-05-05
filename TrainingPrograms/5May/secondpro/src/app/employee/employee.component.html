@@ -1,6 +1,39 @@
-<h2>Employee Records</h2>
-<hr>
+<h2 class="text-center">Add New Employee</h2>
 
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="text" #empid class='form-control' placeholder="Employee ID"/>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="text" #empname class='form-control' placeholder="Employee Name"/>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <select class="form-control" #department>
+            <option value="">Choose Department</option>
+            <option value="Purchase">Purchase Department</option>
+            <option value="Sales">Sales Department</option>
+            <option value="Store">Store Department</option>
+        </select>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="number" #salary class='form-control' placeholder="Employee Salary"/>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" class="btn btn-info">Add Employee</button>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+    </div>
+</div>
+
+<hr>
+<h2 class="text-center">Employee Records</h2>
 <table class="table table-hover table-striped table-bordered">
     <thead>
         <tr>

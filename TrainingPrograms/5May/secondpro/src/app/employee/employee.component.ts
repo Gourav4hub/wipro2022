@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import jsonData from './dummyData.json';
 //import data from './dummyData'
+
 
 @Component({
   selector: 'app-employee',
@@ -17,6 +20,16 @@ export class EmployeeComponent implements OnInit
   }
 
   ngOnInit(): void {
+  }
+
+  public saveEmployee(empid:any,empname:string,department:string,salary:any):void
+  {
+      var obj = { empid : empid*1,
+                  empname  :empname ,
+                  department : department ,
+                  salary : salary*1}
+      //console.log(obj)
+      this.employees.push(obj)
   }
 
 }
