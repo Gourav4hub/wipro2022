@@ -1,0 +1,21 @@
+<h2>Employee Records</h2>
+<hr>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.empid}}</td>
+            <td>{{emp.empname}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </tbody>
+</table>
