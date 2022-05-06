@@ -5,16 +5,22 @@
         <input type="text" #empid  
         (blur)="checkEmpId($event)" 
         (focus)="changeStatus()"
+        [value]="editInfo.employee.empid"
+        [readonly]="editInfo.isupdate"
         class='form-control' placeholder="Employee ID"/>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <input type="text" #empname class='form-control' placeholder="Employee Name"/>
+        <input type="text" #empname class='form-control' 
+        [value]="editInfo.employee.empname"
+        placeholder="Employee Name"/>
     </div>
 </div>
 <br>
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <select class="form-control" #department>
+        <select class="form-control" 
+        [value]="editInfo.employee.department"
+        #department>
             <option value="">Choose Department</option>
             <option value="Purchase">Purchase Department</option>
             <option value="Sales">Sales Department</option>
@@ -22,14 +28,16 @@
         </select>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <input type="number" #salary class='form-control' placeholder="Employee Salary"/>
+        <input type="number" #salary class='form-control' 
+        [value]="editInfo.employee.salary"
+        placeholder="Employee Salary"/>
     </div>
 </div>
 <br>
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         
-        <span *ngIf="deleteInfo.isdelete==false">
+        <span *ngIf="deleteInfo.isdelete==false && editInfo.isupdate==false">
         <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" 
         [disabled]="addButtonDisableStatus" class="btn btn-info">Add 
             Employee</button>
@@ -52,7 +60,15 @@
                 Employee</button>
             &nbsp;    
             <button (click)="cancelDelete()" class="btn btn-primary">Cancel</button>
-            </span> 
+        </span> 
+
+        <span *ngIf="editInfo.isupdate==true">
+            &nbsp;&nbsp;    
+            <button (click)="update(empid.value,empname.value,department.value,salary.value)" class="btn btn-info">Update 
+                Employee</button>
+            &nbsp;    
+            <button (click)="cancelUpdate()" class="btn btn-primary">Cancel</button>
+        </span> 
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 
@@ -65,7 +81,11 @@
 <table class="table table-hover table-striped table-bordered">
     <thead>
         <tr>
-            <th>Select</th>
+            <th class="text-center">
+                Select
+                <br>
+                <input (change)="changeAllStatus($event)" type="checkbox"/>
+            </th>
             <th>S.No.</th>
             <th>Employee ID</th>
             <th>Employee Name</th>
@@ -77,7 +97,7 @@
     <tbody>
         <tr *ngFor="let emp of employees;let i=index">
             <th class="text-center">
-                <input (change)="deleteEmpCheck($event,emp.empid)" type="checkbox">
+                <input (change)="deleteEmpCheck($event,emp.empid)" type="checkbox" [checked]="deleteAllCheckStatus">
             </th>
             <td>{{i+1}}</td>
             <td>{{emp.empid}}</td>
@@ -86,6 +106,8 @@
             <td>{{emp.salary}}</td>
             <td class="text-center">
                 <button (click)="deleteEmployee(emp)" class="btn btn-warning">Delete</button>
+                &nbsp;
+                <button (click)="editEmployee(emp)" class="btn btn-info">Edit</button>
             </td>
         </tr>
     </tbody>

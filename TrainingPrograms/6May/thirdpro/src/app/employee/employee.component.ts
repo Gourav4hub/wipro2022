@@ -10,20 +10,41 @@ export class EmployeeComponent implements OnInit
 {
   public employees:any = []
 
+  public editInfo:any = {
+    isupdate : false,
+    employee : { empid : '' , empname : "",
+      department : "", salary : '' 
+    }
+  }
+
   public deleteInfo:any = {
       isdelete : false,
       employee : undefined
   }
+
   public deleteItems:any = []
 
   public duplicateEmpIdStatus:boolean = false;
   public addButtonDisableStatus:boolean = false;
+  public deleteAllCheckStatus:boolean = false;
+ 
 
   constructor() {       
       this.employees = jsonData
   }
 
   ngOnInit(): void {
+  }
+
+  public changeAllStatus(event:any):void
+  {
+    var status = event.target.checked
+    this.deleteAllCheckStatus = status
+    if(status){
+      this.deleteItems = this.employees.map((ob:any)=>ob.empid)
+    }else{
+      this.deleteItems = []
+    }
   }
 
   public deleteAll():void
@@ -35,6 +56,8 @@ export class EmployeeComponent implements OnInit
           return this.deleteItems.indexOf(ob.empid)<0
       })
       this.deleteItems = []
+      this.deleteAllCheckStatus = false
+
     }
   }
   public deleteEmpCheck(event:any,empid:any):void
@@ -54,6 +77,8 @@ export class EmployeeComponent implements OnInit
 
   public checkEmpId(event:any):void
   {
+    if(this.editInfo.isupdate==false)
+    {
     var id = event.target.value;
     //console.log(id)
     var empObj = this.employees.find((ob:any)=>ob.empid==id)
@@ -63,6 +88,7 @@ export class EmployeeComponent implements OnInit
       this.duplicateEmpIdStatus = true
       this.addButtonDisableStatus = true
     }
+   }
   }
   public changeStatus():void
   {
@@ -70,6 +96,13 @@ export class EmployeeComponent implements OnInit
       this.addButtonDisableStatus = false
   }
 
+  public editEmployee(emp:any)
+  {
+    this.editInfo = {
+      isupdate : true,
+      employee : emp
+    }
+  }
   public deleteEmployee(emp:any)
   {
     this.deleteInfo = {
@@ -83,6 +116,16 @@ export class EmployeeComponent implements OnInit
       employee : undefined
     }
   }
+
+  public cancelUpdate():void{
+    this.editInfo = {
+      isupdate : false,
+      employee : { empid : '' , empname : "",
+          department : "", salary : '' 
+      }
+    }
+  }
+
   public delete():void
   {
      this.employees = this.employees.filter((ob:any)=>ob.empid!=this.deleteInfo.employee.empid)
@@ -97,6 +140,17 @@ export class EmployeeComponent implements OnInit
                   salary : salary*1}
       //console.log(obj)
       this.employees.push(obj)
+  }
+
+  public update(empid:any,empname:string,department:string,salary:any):void
+  {
+      var obj = { empid : empid*1,
+                  empname  :empname ,
+                  department : department ,
+                  salary : salary*1}
+      
+      this.employees = this.employees.map((ob:any)=>ob.empid==empid?obj:ob)
+      this.cancelUpdate()
   }
 
 }
