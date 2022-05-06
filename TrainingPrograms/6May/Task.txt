@@ -1,0 +1,18 @@
+
+	Create a component in which you manager the Task List. Every Task contain data like : 
+		Task Title, 
+		Assign Date , 
+		Complete Date , 
+		Delete Date,
+		activeStatus , 
+		deleteStatus
+		
+	Perform Operation : 
+	
+		1. Add New Task
+		2. List All Task (Active / Deactive / Delete)
+		3. Show Total Task Count.	
+		4. Show Total Active Task Count.
+		5. Show Total Delete Task Count.
+		6. We can Active and Deactive Task.
+		7. We can Delete task but after delete you can not active task again.
