@@ -1,0 +1,87 @@
+<h2 class="text-center">Add New Employee</h2>
+
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="text" #empid  
+        (blur)="checkEmpId($event)" 
+        (focus)="changeStatus()"
+        class='form-control' placeholder="Employee ID"/>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="text" #empname class='form-control' placeholder="Employee Name"/>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <select class="form-control" #department>
+            <option value="">Choose Department</option>
+            <option value="Purchase">Purchase Department</option>
+            <option value="Sales">Sales Department</option>
+            <option value="Store">Store Department</option>
+        </select>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <input type="number" #salary class='form-control' placeholder="Employee Salary"/>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        
+        <span *ngIf="deleteInfo.isdelete==false">
+        <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" 
+        [disabled]="addButtonDisableStatus" class="btn btn-info">Add 
+            Employee</button>
+        </span>  
+
+        <span *ngIf="duplicateEmpIdStatus==true">
+            &nbsp;&nbsp;
+            <b class="text-danger">
+              Employee ID Already Exist ! 
+            </b>
+        </span>
+        
+        <span *ngIf="deleteInfo.isdelete==true">
+            &nbsp;&nbsp;
+            <b class="text-danger">
+              Are you sure to delete ({{deleteInfo.employee.empname}}) ?  
+            </b>
+            &nbsp;&nbsp;    
+            <button (click)="delete()" class="btn btn-info">Delete 
+                Employee</button>
+            &nbsp;    
+            <button (click)="cancelDelete()" class="btn btn-primary">Cancel</button>
+            </span> 
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+    </div>
+</div>
+
+<hr>
+<h2 class="text-center">Employee Records</h2>
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{emp.empid}}</td>
+            <td>{{emp.empname}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.salary}}</td>
+            <td class="text-center">
+                <button (click)="deleteEmployee(emp)" class="btn btn-warning">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
