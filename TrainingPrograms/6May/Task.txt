@@ -4,15 +4,19 @@
 		Assign Date , 
 		Complete Date , 
 		Delete Date,
-		activeStatus , 
-		deleteStatus
+		status (Active , Deactive , Complete , Delete )
 		
 	Perform Operation : 
 	
 		1. Add New Task
-		2. List All Task (Active / Deactive / Delete)
+		2. List All Task (Active / Deactive / Complete / Delete)
 		3. Show Total Task Count.	
 		4. Show Total Active Task Count.
-		5. Show Total Delete Task Count.
-		6. We can Active and Deactive Task.
-		7. We can Delete task but after delete you can not active task again.
+		5. Show Total Complete Task Count.
+		6. Show Total Delete Task Count.
+		7. We can Active and Deactive Task.
+		8. We can Delete task but after delete you can not active task again.
+		9. We can Complete task but after complete you can not deactive or delete task again.
+		
+		
+		
