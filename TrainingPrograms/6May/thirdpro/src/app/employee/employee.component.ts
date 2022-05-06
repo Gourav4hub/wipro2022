@@ -14,6 +14,7 @@ export class EmployeeComponent implements OnInit
       isdelete : false,
       employee : undefined
   }
+  public deleteItems:any = []
 
   public duplicateEmpIdStatus:boolean = false;
   public addButtonDisableStatus:boolean = false;
@@ -23,6 +24,32 @@ export class EmployeeComponent implements OnInit
   }
 
   ngOnInit(): void {
+  }
+
+  public deleteAll():void
+  {
+    //console.log(this.deleteItems)
+    var answer = confirm("Are You Sure To Delete ?")
+    if(answer){
+      this.employees = this.employees.filter((ob:any)=>{
+          return this.deleteItems.indexOf(ob.empid)<0
+      })
+      this.deleteItems = []
+    }
+  }
+  public deleteEmpCheck(event:any,empid:any):void
+  {
+    var status = event.target.checked
+    //console.log("Hi..... ",status,empid)
+    if(status)
+    {
+      // add empid in array
+      this.deleteItems.push(empid);
+    }else
+    {
+      // remove empid in array
+      this.deleteItems = this.deleteItems.filter((id:any)=>id!=empid)
+    }
   }
 
   public checkEmpId(event:any):void

@@ -61,9 +61,11 @@
 
 <hr>
 <h2 class="text-center">Employee Records</h2>
+<button [disabled]="deleteItems.length==0" (click)="deleteAll()" class="btn btn-danger">Delete All</button>
 <table class="table table-hover table-striped table-bordered">
     <thead>
         <tr>
+            <th>Select</th>
             <th>S.No.</th>
             <th>Employee ID</th>
             <th>Employee Name</th>
@@ -74,6 +76,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let emp of employees;let i=index">
+            <th class="text-center">
+                <input (change)="deleteEmpCheck($event,emp.empid)" type="checkbox">
+            </th>
             <td>{{i+1}}</td>
             <td>{{emp.empid}}</td>
             <td>{{emp.empname}}</td>
