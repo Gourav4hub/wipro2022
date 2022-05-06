@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import jsonData from './dummyData.json';
 
 @Component({
   selector: 'app-employee',
@@ -29,11 +28,22 @@ export class EmployeeComponent implements OnInit
   public deleteAllCheckStatus:boolean = false;
  
 
-  constructor() {       
-      this.employees = jsonData
+  constructor() 
+  {       
+    var data = localStorage.getItem('employees')
+    if(data==undefined)
+      this.employees = []
+    else  
+      this.employees = JSON.parse(data)
   }
 
   ngOnInit(): void {
+  }
+
+  public saveData():void
+  {
+    localStorage.setItem("employees", JSON.stringify(this.employees));
+    alert("Data Saved !");
   }
 
   public changeAllStatus(event:any):void

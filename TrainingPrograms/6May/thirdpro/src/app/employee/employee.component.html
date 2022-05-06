@@ -36,7 +36,10 @@
 <br>
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        
+        &nbsp;&nbsp;
+        <button (click)="saveData()" class="btn btn-primary">Save Data</button>
+        &nbsp;&nbsp;
+
         <span *ngIf="deleteInfo.isdelete==false && editInfo.isupdate==false">
         <button (click)="saveEmployee(empid.value,empname.value,department.value,salary.value)" 
         [disabled]="addButtonDisableStatus" class="btn btn-info">Add 
