@@ -11,6 +11,20 @@ export class AppComponent
   public tasks:any = dummyData
   public statusList:string[] = ['active','deactive','complete','delete']
 
+  public changeStatus(task:any,status:string):void
+  {
+      task.status = status
+      if(status=='complete'){
+        task.completeDate = new Date().toLocaleDateString()
+      }
+      if(status=='delete'){
+        task.deleteDate = new Date().toLocaleDateString()
+      }
+
+      var index = this.tasks.indexOf(task)
+      this.tasks[index] = task
+  }
+
   public addTask(title:any):void
   {
      var task = {

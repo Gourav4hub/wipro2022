@@ -30,17 +30,30 @@
         <td>
 
           <div [ngSwitch]="task.status">
-            <div *ngSwitchCase="'active'">
-              <h5 class="bg-info text-center">Active</h5>
+            <div *ngSwitchCase="'active'" class="text-center">
+              <h5 class="bg-info">Active</h5>
+              <button class="btn btn-warning" 
+              (click)="changeStatus(task,'deactive')">Deactive</button>
+              &nbsp;
+              <button class="btn btn-success" 
+              (click)="changeStatus(task,'complete')">Complete</button>
+              &nbsp;
+              <button class="btn btn-danger"
+              (click)="changeStatus(task,'delete')">Delete</button>
             </div>
+
             <div *ngSwitchCase="'deactive'">
               <h5 class="bg-warning text-center">Deactive</h5>
+              <button class="btn btn-info"
+              (click)="changeStatus(task,'active')">Active</button>
             </div>
             <div *ngSwitchCase="'complete'">
               <h5 class="bg-success text-center">Complete</h5>
+              <b> Complete Date : {{task.completeDate}} </b>
             </div>
             <div *ngSwitchCase="'delete'">
               <h5 class="bg-danger text-center">Delete</h5>
+              <b> Delete Date : {{task.deleteDate}} </b>
             </div>
           </div>
 
