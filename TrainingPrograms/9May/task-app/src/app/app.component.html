@@ -1,0 +1,50 @@
+<h1 class="text-center bg-info">Task Manage App</h1>
+
+<h3>Add New Task</h3>
+<div class="row">
+  <div class="col-lg-6 col-mg-6">
+    <input type="text" #taskTitle class='form-control' 
+    placeholder="Task Title">
+  </div>
+  <div class="col-lg-6 col-mg-6">
+    <button (click)="addTask(taskTitle.value)" class="btn btn-success">Add Task</button>
+    &nbsp;
+  </div>
+</div>
+<hr>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>S.No.</th>
+      <th>Task Title</th>
+      <th>Assign Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks; index as i">
+        <td>{{i+1}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.assignDate}}</td>
+        <td>
+
+          <div [ngSwitch]="task.status">
+            <div *ngSwitchCase="'active'">
+              <h5 class="bg-info text-center">Active</h5>
+            </div>
+            <div *ngSwitchCase="'deactive'">
+              <h5 class="bg-warning text-center">Deactive</h5>
+            </div>
+            <div *ngSwitchCase="'complete'">
+              <h5 class="bg-success text-center">Complete</h5>
+            </div>
+            <div *ngSwitchCase="'delete'">
+              <h5 class="bg-danger text-center">Delete</h5>
+            </div>
+          </div>
+
+        </td>
+    </tr>
+  </tbody>
+</table>
