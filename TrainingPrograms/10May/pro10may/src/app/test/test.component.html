@@ -1,0 +1,20 @@
+
+<!-- <b *ngIf="cities.length==0">City List is Empty</b>
+<b *ngIf="cities.length>0">City List</b> -->
+<div *ngIf="cities.length==0; then noCity else cityList"></div>
+<ng-template #noCity>
+  <b>City List is Empty</b>
+</ng-template>
+<ng-template #cityList>
+  <b>City List</b> <br>
+  <ol>
+    <li *ngFor="let city of cities;odd as od">
+      <span [ngStyle]="{color:od?'red':'blue',backgroundColor:'grey'}"> {{city}} </span>
+    </li>
+  </ol>
+</ng-template>
+
+<hr>
+
+<b [hidden]="cities.length>0">City List is Empty</b>
+<b [hidden]="cities.length==0">City List</b>

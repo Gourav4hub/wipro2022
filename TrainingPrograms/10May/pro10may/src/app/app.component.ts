@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent
 {
-   public cities:any = ['Pune','Delhi','Raipur','Mumbai','Indore']
-
-  public saveEmployee(data:any):void
-  {
-    console.log(data)
-  }
+  
 }
