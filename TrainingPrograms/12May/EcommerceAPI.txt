@@ -1,0 +1,69 @@
+1. GET : Category List
+"https://ecommerce-web-sample.herokuapp.com/api/category/list"
+			
+2. POST : Category Save
+
+"https://ecommerce-web-sample.herokuapp.com/api/category/save"
+			{
+				cate_name : 'TV'
+			}
+
+3. GET : Brand List
+"https://ecommerce-web-sample.herokuapp.com/api/brand/list"
+
+4. POST : Brand Save
+"https://ecommerce-web-sample.herokuapp.com/api/brand/save"
+			{
+				brand_name : 'Sony'
+			}
+
+
+*************************************************************************
+			
+4. GET : Product List			
+			"https://ecommerce-web-sample.herokuapp.com/api/product/list"
+
+5. POST : Product Save
+			"https://ecommerce-web-sample.herokuapp.com/api/product/save"			
+			{
+				prod_name: String,
+	         prod_price: Number,
+            prod_cate: String,
+            prod_brand: String,
+            prod_image: Image,
+			}
+6. POST : Product Status Change
+	 "https://ecommerce-web-sample.herokuapp.com/api/product/changestatus"
+	 {
+	 	pid : string,
+	 	status : boolean
+	 }
+*******************************************************************************			
+7. POST : User Register		
+	"https://ecommerce-web-sample.herokuapp.com/user/register"
+	{
+		  name: String,
+        phone: String,
+        email: String,
+        password: String,
+        address : Array,
+	}
+	
+8. POST : User Login		
+	"https://ecommerce-web-sample.herokuapp.com/user/login"	
+	{
+		email : "",
+		password : ""
+	}
+	
+9. POST : Get User
+	"https://ecommerce-web-sample.herokuapp.com/user/getUser"	
+	Request + JWT Token
+
+10. POST : Admin Login	
+
+	"https://ecommerce-web-sample.herokuapp.com/user/adminlogin"	
+	{
+		adminid : "admin@gmail.com",
+		password : "12345"
+	}
