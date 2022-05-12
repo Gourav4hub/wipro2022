@@ -20,4 +20,9 @@ export default class CategoryService
         this.categories = data
     });
   }
+
+  public saveCategory(data:any)
+  {
+    return this.http.post("https://ecommerce-web-sample.herokuapp.com/api/category/save",data);
+  }
 }

@@ -1,13 +1,17 @@
-<div class="row">
-    
+
+<form #frm="ngForm" (submit)="save(frm.value)">
+<div class="row">    
     <div class="col-lg-6 col-md-6">        
             <label for="cateName">Category Name</label>
-            <input #cateName type="text" class='form-control' placeholder="Category Name" required>
+            <input #cateName type="text" ngModel name="cate_name" class='form-control' placeholder="Category Name" required>
     </div>        
     <div class="col-lg-6 col-md-6">
-            <button class="btn btn-success">Save Category</button>
+        <button class="btn btn-success">Save Category</button>
+        &nbsp;
+        <b class="text-danger">{{msg}}</b>
     </div>        
 </div>
+</form>
 <hr>
 <table class="table table-striped table-bordered">
     <thead>
