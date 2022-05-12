@@ -16,4 +16,10 @@
             <th>Category Name</th>
         </tr>
     </thead>
+    <tbody>
+        <tr *ngFor="let cateObj of categoryService.categories;index as i">
+            <th>{{i+1}}</th>    
+            <th>{{cateObj.cate_name}}</th>
+        </tr>
+    </tbody>
 </table>
