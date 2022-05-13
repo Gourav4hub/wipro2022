@@ -1,0 +1,36 @@
+<h2>User Registeration</h2>
+
+<form #frm="ngForm" (submit)="save(frm.value)">
+    <div class="row">    
+        <div class="col-lg-6 col-md-6">        
+                <label for="userName">User Name</label>
+                <input #userName type="text" ngModel name="name" class='form-control' placeholder="User Name" required>
+        </div> 
+        <div class="col-lg-6 col-md-6">        
+            <label for="userPhone">User Phone</label>
+            <input #userPhone type="text" ngModel name="phone" class='form-control' placeholder="User Phone" required>
+        </div>                
+    </div>
+    <br>
+    <div class="row">    
+        <div class="col-lg-6 col-md-6">        
+                <label for="userEmail">User Email</label>
+                <input #userEmail type="email" ngModel name="email" class='form-control' placeholder="User email" required>
+        </div> 
+        <div class="col-lg-6 col-md-6">        
+            <label for="userPassword">User Password</label>
+            <input #userPassword type="password" ngModel name="password" class='form-control' placeholder="User Password" required>
+        </div>               
+    </div>
+    <br>
+    <div class="row">  
+        <div class="col-lg-6 col-md-6">
+            <button class="btn btn-success">Save User</button>
+            &nbsp;
+            <b class="text-danger">{{msg}}</b>
+        </div>        
+    </div>  
+
+    </form>
+    <hr>
+    
