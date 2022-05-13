@@ -1,0 +1,23 @@
+<form #frm="ngForm" (submit)="login(frm.value)">
+<div class="row">
+    <div class="col-lg-6 col-md-6">
+        <label for="adminid">User Email</label>
+        <input #adminid type="email" name="email" ngModel class='form-control' placeholder="Admin ID" required>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <label for="adminpass">Password</label>
+        <input #adminpass type="password" name="password" ngModel class='form-control' placeholder="Admin Password" required>
+    </div>
+</div>
+<br>
+<div class="row">
+
+<div class="col-lg-6 col-md-6">
+        <button class="btn btn-success">Login</button>
+</div>
+<div class="col-lg-6 col-md-6">
+        <b class="text-danger">{{msg}}</b>
+</div>
+</div>
+</form>
+
