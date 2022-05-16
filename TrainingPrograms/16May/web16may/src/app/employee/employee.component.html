@@ -1,0 +1,47 @@
+<h1>Employee Records</h1>
+<br>
+
+<form #frm="ngForm" (submit)="add(frm.value)">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <input type="text" required 
+            ngModel name="empid"
+            class="form-control"
+            placeholder="Employee ID">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <input type="text" required 
+            ngModel name="empname"
+            class="form-control"
+            placeholder="Employee Name">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <input type="text" required 
+            ngModel name="city"
+            class="form-control"
+            placeholder="Employee City">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <input type="text" required 
+            ngModel name="salary"
+            class="form-control"
+            placeholder="Employee Salary">
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success">Save Employee</button>
+
+</form>
+
+
+<br>
+        <app-employee-item 
+            *ngFor="let emp of employees;index as i"
+            [emp]="emp" [index]="i+1"
+            (deleteItem)="delete($event)">
+
+        </app-employee-item>
+
