@@ -1,3 +1,49 @@
-<h1>App Component</h1>
+<h1 class="bg-info">User Registeration Form</h1>
+
+<form [formGroup]="userFrmGroup" (submit)="register()">
+    <div formGroupName="basicInfo">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <label>User Name</label>
+                <input type="text" placeholder="User Name" formControlName="userName" class="form-control">
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <label>User Email</label>
+                <input type="text" placeholder="User Email" formControlName="userEmail" class="form-control">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <label>User Phone</label>
+                <input type="text" placeholder="User Phone" formControlName="userPhone" class="form-control">
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <label>User Password</label>
+                <input type="password" placeholder="User Password" formControlName="userPassword" class="form-control">
+            </div>
+        </div>
+    </div>
+    <br>    
+    <div formGroupName="otherInfo">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <label>User DOB</label>
+                <input type="date" placeholder="User DOB" formControlName="userDOB" class="form-control">
+            </div>          
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <button [disabled]="!userFrmGroup.valid" class="btn btn-success">Register</button>
+        </div>
+    </div>
+
+</form>
+
+
+
+
 <hr>
 <app-employee></app-employee>
