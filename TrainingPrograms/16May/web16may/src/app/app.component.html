@@ -30,13 +30,28 @@
             <div class="col-lg-6 col-md-6">
                 <label>User DOB</label>
                 <input type="date" placeholder="User DOB" formControlName="userDOB" class="form-control">
-            </div>          
+            </div>                 
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <label>User Skills</label>
+                <ng-container formArrayName="skills"                 
+                *ngFor="let sk of getSkills().controls;index as i">
+                    <input type="text" class='form-control' formControlName="{{i}}" placeholder="Skill Name"><br>
+                </ng-container>    
+                <br>
+                <button type='button' class='btn btn-info' (click)="addSkill()">Add Skill</button>
+            </div>      
+            <div class="col-lg-6 col-md-6">
+                            
+            </div>    
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <button [disabled]="!userFrmGroup.valid" class="btn btn-success">Register</button>
+            <button type='submit' [disabled]="!userFrmGroup.valid" class="btn btn-success">Register</button>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup , FormControl, Validators } from '@angular/forms';
+import { FormGroup , FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,9 @@ import { FormGroup , FormControl, Validators } from '@angular/forms';
 export class AppComponent 
 {
   public userFrmGroup:FormGroup;
-  constructor(){
+
+  constructor()
+  {
     this.userFrmGroup = new FormGroup({
         basicInfo : new FormGroup({
           userName : new FormControl(null,Validators.required),
@@ -18,9 +20,25 @@ export class AppComponent
           userPassword : new FormControl(null,Validators.required)
         }),
         otherInfo : new FormGroup({
-          userDOB : new FormControl()
-        })       
+          userDOB : new FormControl(),
+          skills : new FormArray([])        
+        }),
+       
     })   
+   
+  }
+
+  public getSkills():FormArray
+  {
+    return this.userFrmGroup.get('otherInfo.skills') as FormArray;
+  }
+
+  public addSkill()
+  {    
+    var skills:any = this.userFrmGroup.get('otherInfo.skills');    
+    if(skills!=null){
+      skills.push(new FormControl())
+    }
   }
 
   public register():void{
