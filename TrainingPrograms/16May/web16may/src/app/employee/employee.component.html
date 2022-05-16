@@ -1,17 +1,15 @@
 <h1>Employee Records</h1>
 <br>
 
-<form #frm="ngForm" (submit)="add(frm.value)">
+<form [formGroup]="empFrmGroup" (submit)="add()">
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <input type="text" required 
-            ngModel name="empid"
+            <input type="text" formControlName="empid"
             class="form-control"
             placeholder="Employee ID">
         </div>
         <div class="col-lg-6 col-md-6">
-            <input type="text" required 
-            ngModel name="empname"
+            <input type="text" formControlName="empname"
             class="form-control"
             placeholder="Employee Name">
         </div>
@@ -19,20 +17,30 @@
     <br>
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <input type="text" required 
-            ngModel name="city"
+            <input type="text" formControlName="city"
             class="form-control"
             placeholder="Employee City">
         </div>
         <div class="col-lg-6 col-md-6">
-            <input type="text" required 
-            ngModel name="salary"
+            <input type="text" formControlName="salary"
             class="form-control"
             placeholder="Employee Salary">
         </div>
     </div>
     <br>
-    <button class="btn btn-success">Save Employee</button>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <label>Gender</label><br>
+            <input type="radio" formControlName="gender" 
+            value="male" name="gender"> &nbsp; Male
+            &nbsp;
+            <input type="radio" formControlName="gender"
+            value="female" name="gender"> &nbsp; FeMale
+        </div>        
+    </div>
+    <br>
+    <button [disabled]="!empFrmGroup.valid"
+    class="btn btn-success">Save Employee</button>
 
 </form>
 

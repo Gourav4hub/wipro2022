@@ -1,5 +1,6 @@
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 
+
 @Component({
   selector: 'app-employee-item',
   templateUrl: './employee-item.component.html',
@@ -15,6 +16,7 @@ export class EmployeeItemComponent implements OnInit
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
   public deleteEmp():void{
