@@ -1,0 +1,145 @@
+Java : 
+		It is Programming Language.
+		It is Object Oriented Language.
+		It is Platform Independant Language.
+		
+"Platform Dependancy"
+
+	C/C++
+	
+		Source Code					Executable Code
+		    .c			Compiler			.exe
+		    .cpp			   +
+		    				   OS			
+		    				   
+"Platform InDependancy"		    				   
+
+	Java
+						1. Compiling	
+	Source Code  								Byte Code
+										(Intermediate Code)			
+  	  .java			Compiler					.class
+  	  				   +
+  	  				JVM (Java Virtual Machine)	
+  	  				
+  	  					2. Execute
+  	  					
+	Byte Code				JVM				Executable Code
+	.class  	  			+ OS	
+					Interpreter	
+					*****************************************************************************
+				
+				Sun Microsystem / Oracle
+					
+						"Green Project"						
+							"Star 7"
+							
+							"Applet" : "HotJava"
+	James Gosling				
+	Peter Naugton
+							"Java" ???
+******************************************************************************	
+					
+Compiling :   javac <Filename.java>
+
+Execute :     java <Class>
+
+******************************************************************************
+
+	JDK : Java Development Kit
+	
+	JRE : Java Runtime Environment
+	
+********************************************
+
+	Data Type
+	
+		Primitive
+			
+			byte			1	-128to127					25
+			short		2	-32768to32767				4587	
+			int			4	-2147483648to2147483647		45879856
+			long			8							9875641235
+			
+			float		4		253.256	
+			double		8		245.2547
+			
+			char			2		'a'
+			boolean		1		true / false
+			
+		Non-Primitive
+		*****************************
+		
+		System.out : OutputStream
+		System.in  : InputStream 
+		
+		Scanner sc;
+		
+		java.lang
+		
+		***************************************************
+		
+		package :  
+		
+		Songs / Movies
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+									
+  	  				
+  	  				
+  	  				
+  	  				
+  	  				
+  	  				
+  	  				
+  	  				
+  	  				
+  		  
+  		  
+  		  
+  		  
+  		  
+  		  
