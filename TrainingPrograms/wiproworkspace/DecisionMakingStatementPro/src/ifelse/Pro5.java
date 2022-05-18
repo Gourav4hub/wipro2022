@@ -1,11 +1,12 @@
 package ifelse;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Pro5 
 {
 	public static void main(String[] args) 
-	{
+	{		
 		char grade;
 		Scanner sc = new Scanner(System.in);
 		
