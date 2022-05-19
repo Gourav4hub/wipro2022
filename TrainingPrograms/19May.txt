@@ -1,0 +1,90 @@
+
+	Data : Management , Security
+	Code : functionality : Efficiency , Accuracy , Speed
+	
+	Making food:
+	
+		Data : Food Items : 100
+		Cook : 
+
+Procedural Oriented Programming
+	
+	Data : structure
+	Code : functions
+
+Object Oriented Programming
+
+	Object : It is a real world entity.
+	
+		Book, Laptop, Mobile, Table, Pen , Chair, Fan ......	
+			you + chair , 
+			
+		Features / Properties : 
+		Behaviors	/ Functionality : 
+		
+	Class : It is a place where you define your Object.	
+   		   It is a blueprint of an Object.
+   		   
+	1. Encapsulation : Wrapping up data and function into
+						a single unit (Object).  
+						
+		fan : describe features / execute functionality			
+		
+		printf("Hello...");
+***********************************************************************
+
+	Class / Object
+	
+	Virtual Object : ?
+	
+	Class : First : What are you defining inside this class?	
+		
+	Object : Second
+	
+************************************************************************
+
+	Accessibility : Access Modifiers
+	
+	private : private members are access only within a class
+			private members are access via its other class members only.
+			Mostly data members are private.
+			
+	public  : public members are access within a class but 
+			also access outside of a class with Object.
+			Mostly methods are public.
+			
+			protected
+			default/package
+
+	class Student
+	{
+		// Members
+		
+		// Data Members : features
+			roll , name , age , city , marks
+		
+		// Member Methods : functionality
+	}
+	
+							
+						
+						
+						
+						
+						
+						
+						
+						 		   
+   		   
+   		   
+			
+			
+			
+			
+			
+			
+			
+			
+				
+
+	

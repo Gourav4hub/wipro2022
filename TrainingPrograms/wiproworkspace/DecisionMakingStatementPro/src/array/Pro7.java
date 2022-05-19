@@ -10,5 +10,7 @@ public class Pro7
 		
 		System.out.println(arr.length);
 		System.out.println(arr[0].length);
+		
+		
 	}
 }

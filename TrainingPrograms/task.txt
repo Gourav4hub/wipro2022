@@ -1,0 +1,25 @@
+	
+1. Remove all duplicate	values in 1D array without creating a new array.
+
+	for example:
+	
+			int arr[] = [44,54,33,42,33,44,12,54,12];
+			
+			// ?????
+			
+			Result : [44,54,33,42,12]
+			
+2. Remove duplicate	values in 1D array if these values come in a continues way.
+
+	for example:
+	
+			int arr[] = [44,54,54,42,42,42,44,12,12];
+			
+			// ?????
+			
+			Result : [44,54,42,44,12]			
+	
+	
+	
+	
+	
