@@ -15,7 +15,17 @@ public class Student
 	public Student() {}
 	
 	// Parameter Constructor
-	public Student(int rollNumber, String studentName, int age, String city,float marks) 
+	public Student(Student ob) 
+	{
+		this.rollNumber = ob.rollNumber;
+		this.studentName = ob.studentName;
+		this.age = ob.age;
+		this.city = ob.city;
+		this.marks = ob.marks;				
+	}
+	
+	public Student(int rollNumber, String studentName, 
+			int age, String city,float marks) 
 	{
 		this.rollNumber = rollNumber;
 		this.studentName = studentName;
@@ -23,6 +33,14 @@ public class Student
 		this.city = city;
 		this.marks = marks;				
 	}
+	
+	public Student(int rollNumber, String studentName,String city) 
+	{
+		this.rollNumber = rollNumber;
+		this.studentName = studentName;		
+		this.city = city;		
+	}
+	
 	
 	// Member Methods
 	public void input() 

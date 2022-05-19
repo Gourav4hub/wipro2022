@@ -19,9 +19,12 @@ public class Pro3
 		 * */
 		Student ob1 = new Student(101,"Vikas",23,"indore",345.54f);
 		Student ob2 = new Student();
+		Student ob3 = new Student(103,"Meena","ujjain");		
+		Student ob4 = new Student(ob1);
 		
 		ob1.show();
 		ob2.show();
-		
+		ob3.show();
+		ob4.show();
 	}	
 }
