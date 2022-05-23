@@ -1,0 +1,79 @@
+Inheritance : Is-A Relationship between objects;
+
+	
+					CS Student
+						features / functions
+	Student			EC Student
+roll,name,phone,age			features / functions
+	Methods			ME Student
+						features / functions
+						
+	CS IS-A Student : true
+	ME IS-A Student : true						
+	
+	Chair Is-A Student : false
+**********************************************************************
+
+Single Inheritance
+					A		Parent / Super
+					
+					B		Child / Sub
+					
+Multilevel Inheritance					
+
+					A
+					
+					B
+					
+					C
+					
+Hierarchical Inheritance
+
+						A
+						
+				B		C		D
+				
+*************************************************************************
+
+
+						Person
+							name,age,phone
+						
+			Student					Faculty
+				roll,marks				facid,salary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				
+			E	   F			  G      H				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
