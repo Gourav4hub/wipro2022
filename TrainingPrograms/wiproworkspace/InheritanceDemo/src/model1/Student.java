@@ -1,4 +1,4 @@
-package model;
+package model1;
 
 import java.util.Scanner;
 

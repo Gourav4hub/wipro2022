@@ -1,4 +1,4 @@
-package model;
+package model2;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class Person
 	private String phone;
 	
 	public Person(){
-		System.out.println("Person Object is created !");
+		
 	}
 
 	public Person(String name, int age, String phone) 
@@ -19,7 +19,7 @@ public class Person
 		this.phone = phone;
 	}
 	
-	public void inputPerson() 
+	public void input() 
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nName : "); this.name = sc.next();
@@ -27,7 +27,7 @@ public class Person
 		System.out.print("Age : "); this.age = sc.nextInt();
 	}
 	
-	public void showPerson() 
+	public void show() 
 	{
 		System.out.println("\nName : " + this.name);
 		System.out.println("Phone : " + this.phone);

@@ -41,6 +41,21 @@ Hierarchical Inheritance
 						
 			Student					Faculty
 				roll,marks				facid,salary
+				
+***************************************************************************
+
+	Person : inputPerson() , showPerson()
+	
+	Student : inputStudent() , showStudent()
+	
+	Faculty : inputFaculty() , showFaculty()
+	
+								
+							Bike	
+							
+		RoyalEnfield     BajajDiscover	BajajPulsar    HeroCDDelux
+		
+			start()		   start()         start()        start()
 
 
 
