@@ -56,6 +56,59 @@ Hierarchical Inheritance
 		RoyalEnfield     BajajDiscover	BajajPulsar    HeroCDDelux
 		
 			start()		   start()         start()        start()
+						***********************************************************
+						
+	Polymorphism : One thing multiple forms
+	
+		Compile Time : Method Overloading
+		
+				public void execute(int a,int b){}
+				public void execute(int a,int b,int c){}
+				public void execute(float a,float b){}
+				
+				execute(2.3,3.1)
+		
+		Run Time : 
+***************************************************************************
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 
 
 
