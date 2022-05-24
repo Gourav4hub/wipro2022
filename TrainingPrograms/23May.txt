@@ -42,6 +42,10 @@ Hierarchical Inheritance
 			Student					Faculty
 				roll,marks				facid,salary
 				
+							FullTimeFaculty			VisitingFaculty
+								    basic					hour
+								    incentives				rate
+				
 ***************************************************************************
 
 	Person : inputPerson() , showPerson()
@@ -76,7 +80,11 @@ Hierarchical Inheritance
 
 
 
-	
+	Laptop , Table , 
+	Mobile,
+	Chair , 
+	Fan , Lights , Clothes , 
+	Headset , Pen , Book , Charger
 
 
 
