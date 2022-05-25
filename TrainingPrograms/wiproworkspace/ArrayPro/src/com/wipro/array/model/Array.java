@@ -30,11 +30,35 @@ public class Array
 	}	
 	public int getSize() {
 		return size;
+	}	
+	
+	private void regenerateArray(boolean isIncrease,int newSize) 
+	{
+		if(isIncrease) 
+		{
+			this.size = newSize;
+			int arr[] = new int[this.size];
+			for(int i=0; i<=this.indexValue;i++) 
+			{
+				arr[i] = this.values[i];
+			}
+			this.values = arr;
+		}
 	}
+	
+	public int linearSearch(int value) 
+	{
+		return 0;
+	}
+	
 	
 	// Add New Element in Array
 	public void add(int value) 
 	{
+		if(this.indexValue==this.size-1) 
+		{
+			regenerateArray(true,this.size+10);
+		}
 		this.indexValue++;
 		this.values[this.indexValue] = value;
 	}
