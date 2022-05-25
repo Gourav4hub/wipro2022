@@ -48,7 +48,19 @@ public class Array
 	
 	public int linearSearch(int value) 
 	{
-		return 0;
+		for(int i=0; i<=indexValue; i++) // 100 Values 
+		{
+			if(this.values[i]==value) 
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void sort() 
+	{
+		// selection 
 	}
 	
 	
