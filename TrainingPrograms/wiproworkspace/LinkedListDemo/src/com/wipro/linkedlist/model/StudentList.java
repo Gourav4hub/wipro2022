@@ -20,6 +20,28 @@ public class StudentList
 		}
 	}
 	
+	public void removeStudent() 
+	{
+		if(startNode==null) 
+			System.err.println("No Data Found !");
+		else 
+		{
+			if(startNode.getNextNode()==null)
+			{
+				startNode = endNode = null;
+			}else 
+			{
+				Node node = startNode;			
+				while(node.getNextNode().getNextNode()!=null) 
+				{
+					node = node.getNextNode();
+				}			
+				node.setNextNode(null);
+				endNode = node;
+			}
+		}
+	}
+	
 	public void traverse() 
 	{
 		if(startNode==null) 

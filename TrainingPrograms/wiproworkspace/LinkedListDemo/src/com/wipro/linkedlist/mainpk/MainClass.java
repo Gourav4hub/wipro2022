@@ -6,12 +6,26 @@ public class MainClass {
 
 	public static void main(String[] args) 
 	{		
-		StudentList list = new StudentList();
+		StudentList list = new StudentList();		
+		list.addStudent();
+		list.addStudent();
+		list.addStudent();		
+		list.traverse();
 		
-		list.addStudent();
-		list.addStudent();
-		list.addStudent();
+		System.out.println("******************");		
+		list.removeStudent();
+		list.traverse();
 		
+		System.out.println("******************");		
+		list.removeStudent();
+		list.traverse();
+		
+		System.out.println("******************");		
+		list.removeStudent();
+		list.traverse();
+		
+		System.out.println("******************");		
+		list.removeStudent();
 		list.traverse();
 	}
 }
