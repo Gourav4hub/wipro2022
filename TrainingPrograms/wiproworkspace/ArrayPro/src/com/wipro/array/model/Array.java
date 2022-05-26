@@ -58,9 +58,20 @@ public class Array
 		return -1;
 	}
 	
-	public void sort() 
+	public void selectionSort() 
 	{
-		// selection 
+		for(int i=0; i<indexValue; i++) // indexValue = 5
+		{
+			for(int j=i+1; j<=indexValue; j++) 
+			{
+				if(values[j] < values[i])
+				{
+					int z = values[i];
+					values[i] = values[j];
+					values[j] = z;
+				}
+			}
+		}
 	}
 	
 	

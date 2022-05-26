@@ -15,11 +15,10 @@ public class MainClass
 		ob.add(32);
 		ob.add(87);
 		
-		int i = ob.linearSearch(6);
-		System.out.println(i);
+		ob.selectionSort();
 		
-//		for(int i : ob.getValues())
-//			System.out.println(i);
+		for(int i : ob.getValues())
+			System.out.println(i);
 	
 	}
 }
