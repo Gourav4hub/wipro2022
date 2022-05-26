@@ -32,6 +32,7 @@ public class Array
 		return size;
 	}	
 	
+	// O(n)
 	private void regenerateArray(boolean isIncrease,int newSize) 
 	{
 		if(isIncrease) 
@@ -45,10 +46,10 @@ public class Array
 			this.values = arr;
 		}
 	}
-	
+	// O(N)
 	public int linearSearch(int value) 
 	{
-		for(int i=0; i<=indexValue; i++) // 100 Values 
+		for(int i=0; i<=indexValue; i++) // 10,00,000 Values 
 		{
 			if(this.values[i]==value) 
 			{
@@ -58,6 +59,29 @@ public class Array
 		return -1;
 	}
 	
+	public int binarySearch(int value) 
+	{
+		int start = 0;
+		int end = indexValue;
+		int mid = (start+end)/2;
+		
+		while(start<=end) 
+		{
+			if(values[mid]==value)
+				return mid;
+			
+			if(value > values[mid])
+				start = mid+1;
+			else
+				end = mid-1;
+			
+			mid = (start+end)/2;
+		}
+		
+		return -1;
+	}
+	
+	// O(N2)
 	public void selectionSort() 
 	{
 		for(int i=0; i<indexValue; i++) // indexValue = 5
@@ -76,6 +100,7 @@ public class Array
 	
 	
 	// Add New Element in Array
+	// 
 	public void add(int value) 
 	{
 		if(this.indexValue==this.size-1) 
@@ -87,6 +112,7 @@ public class Array
 	}
 	
 	// Remove One Element in Array
+	// O(1)
 	public int remove() 
 	{
 		int value = this.values[this.indexValue];
@@ -95,6 +121,7 @@ public class Array
 		return value;
 	}	
 	
+	// O(N)
 	public int remove(int index) 
 	{
 		if(index<0 || index>indexValue)

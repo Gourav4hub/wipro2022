@@ -17,8 +17,8 @@ public class MainClass
 		
 		ob.selectionSort();
 		
-		for(int i : ob.getValues())
-			System.out.println(i);
+		int i = ob.binarySearch(607);
+		System.out.println(i);
 	
 	}
 }
