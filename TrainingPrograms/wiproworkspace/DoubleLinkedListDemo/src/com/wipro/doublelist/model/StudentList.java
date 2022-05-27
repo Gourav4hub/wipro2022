@@ -1,5 +1,7 @@
 package com.wipro.doublelist.model;
 
+import java.util.Deque;
+
 public class StudentList 
 {
 	private Node startNode;
@@ -38,18 +40,27 @@ public class StudentList
 		}
 	}
 	
-	public void traverse() 
+	public void traverse(boolean isForward) 
 	{
 		if(startNode==null) 
 			System.err.println("No Data Found !");
 		else 
 		{
-			Node node = startNode;
-			do 
-			{
-				node.show();
-				node = node.getNextNode();
-			}while(node!=null);
+			if(isForward) {
+				Node node = startNode;
+				do 
+				{
+					node.show();
+					node = node.getNextNode();
+				}while(node!=null);
+			}else {
+				Node node = endNode;
+				do 
+				{
+					node.show();
+					node = node.getPrevNode();
+				}while(node!=null);
+			}
 		}
 	}
 }

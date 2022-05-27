@@ -15,7 +15,10 @@ public class MainClass {
 		{
 			System.out.println("\n1. Add Student");
 			System.out.println("2. Remove Student");
-			System.out.println("3. List Students");
+			System.out.println("3. List Students (Forward)");
+			System.out.println("4. List Students (Backward)");
+			System.out.println("5. Delete Student"); // Roll :  
+			System.out.println("6. Search Student"); // Roll : 
 			System.out.println("7. Exit ");
 			System.out.print(">>> ");
 			choice = sc.nextInt();
@@ -25,7 +28,8 @@ public class MainClass {
 			{
 				case 1 : list.addStudent(); break;
 				case 2 : list.removeStudent(); break;
-				case 3 : list.traverse(); break;
+				case 3 : list.traverse(true); break;
+				case 4 : list.traverse(false); break;
 				default : System.out.println("\nWrong Choice !");
 			}
 		}
