@@ -40,6 +40,23 @@ public class StudentList
 		}
 	}
 	
+	public Node searchStudent(int roll) 
+	{
+		if(startNode==null) 
+			return null;
+		else 
+		{
+			Node node = startNode;
+			do 
+			{
+				if(node.getRoll()==roll)
+					return node;
+				node = node.getNextNode();
+			}while(node!=null);
+		}
+		return null;
+	}
+	
 	public void traverse(boolean isForward) 
 	{
 		if(startNode==null) 

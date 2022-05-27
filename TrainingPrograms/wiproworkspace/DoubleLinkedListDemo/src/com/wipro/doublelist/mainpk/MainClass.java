@@ -2,6 +2,7 @@ package com.wipro.doublelist.mainpk;
 
 import java.util.Scanner;
 
+import com.wipro.doublelist.model.Node;
 import com.wipro.doublelist.model.StudentList;
 
 public class MainClass {
@@ -30,6 +31,13 @@ public class MainClass {
 				case 2 : list.removeStudent(); break;
 				case 3 : list.traverse(true); break;
 				case 4 : list.traverse(false); break;
+				case 6 :  System.out.println("Roll : ");				
+						  Node node = list.searchStudent(sc.nextInt());
+						  if(node==null)
+							  	System.out.println("No Student Found !");
+						  else
+							  node.show();
+						  break;
 				default : System.out.println("\nWrong Choice !");
 			}
 		}
