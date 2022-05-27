@@ -40,6 +40,39 @@ public class StudentList
 		}
 	}
 	
+	public void deleteStudent(int roll) 
+	{
+		Node node = searchStudent(roll);
+		if(node!=null)
+		{
+			if(startNode==endNode) 
+			{
+				startNode = endNode = null;
+			}else 
+			{
+				Node preNode = node.getPrevNode();
+				Node nextNode = node.getNextNode();						
+				
+				if(preNode==null)
+				{					
+					nextNode.setPrevNode(null);
+					startNode = nextNode;
+				}else 
+				{
+					if(nextNode==null) 
+					{				
+						preNode.setNextNode(null);
+						endNode = preNode;
+					}else 
+					{
+						preNode.setNextNode(nextNode);
+						nextNode.setPrevNode(preNode);		
+					}
+				}				
+			}
+		}
+	}
+	
 	public Node searchStudent(int roll) 
 	{
 		if(startNode==null) 

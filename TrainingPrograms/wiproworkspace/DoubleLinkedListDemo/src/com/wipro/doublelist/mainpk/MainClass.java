@@ -31,6 +31,9 @@ public class MainClass {
 				case 2 : list.removeStudent(); break;
 				case 3 : list.traverse(true); break;
 				case 4 : list.traverse(false); break;
+				case 5 : System.out.println("Roll : ");				
+				  		 list.deleteStudent(sc.nextInt());
+				  		 break;
 				case 6 :  System.out.println("Roll : ");				
 						  Node node = list.searchStudent(sc.nextInt());
 						  if(node==null)
