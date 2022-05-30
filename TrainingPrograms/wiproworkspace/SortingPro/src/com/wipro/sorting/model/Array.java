@@ -98,6 +98,21 @@ public class Array
 		}
 	}
 	
+	public void insertionSort() 
+	{
+		for(int x=0;  x<=indexValue; x++)
+        {
+                int num = values[x];
+                int pos = x;                
+                while(pos > 0 && values[pos-1] > num)
+                {
+                        values[pos] = values[pos-1];
+                        pos--;
+                }                
+                if(pos != x)  {   values[pos] = num;      }                
+        }
+	}
+	
 	// Worse Case : O(N2) , Best Case : O(N)
 	public void bubbleSort() 
 	{

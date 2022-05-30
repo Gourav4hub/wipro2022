@@ -15,7 +15,7 @@ public class MainClass
 		ob.add(32);
 		ob.add(87);
 		
-		ob.bubbleSort();
+		ob.insertionSort();
 		
 		for(int x : ob.getValues())
 			System.out.println(x);
