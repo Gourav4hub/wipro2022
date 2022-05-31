@@ -1,0 +1,61 @@
+Angular : 
+
+	Spring MVC
+	Spring Boot : Framework
+	
+	MVC : Model , View and Controller
+	
+		1. Controller : Receive the Request ,
+					 Sending the Response
+					 
+		2. Model : Business Login and Database Code
+		
+		3. View : UI - Design					 
+		
+	Client >>> Controller >>> Model >>> 
+			Return Data >>> Generate a View >>> Response View >>> Client	
+			
+	MVC-2
+	
+		1. Controller : Receive the Request ,
+					 Sending the Response
+					 
+		2. Model : 
+				1. Database Part : DB Code
+				2. Service Part : Business Logic
+		
+		3. View : UI - Design	
+		
+Client >>> Controller >>> Service >>> Model >>> 
+			Return Data Service >>> Final Data Controller 
+			>>> Generate a View >>> Response View >>> Client		
+			
+********************************************************************
+
+	Angular : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+		
+		
+		
+		
+		
+		
+	
+					
