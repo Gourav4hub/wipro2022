@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wipro.boot.model.Customer;
+
 @RestController
 public class WebController 
 {
@@ -71,8 +73,19 @@ public class WebController
 		return "Hello " + data.get("name") + " : " + data.get("age");
 	}
 	
+// **************************************** *********************
 	
+	@RequestMapping(value = "/test8",method = RequestMethod.POST) 
+	public String fun8(Customer customer) 
+	{
+		return "Hello " + customer;
+	}
 	
+	@RequestMapping(value = "/test9",method = RequestMethod.POST) 
+	public String fun9(@RequestBody Customer customer) 
+	{
+		return "Hello " + customer;
+	}
 	
 	
 	
