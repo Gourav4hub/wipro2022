@@ -35,5 +35,10 @@ public class EmployeeService
 	public Optional<Employee> get(Integer empid) 
 	{
 		return employeeRepo.findById(empid);		
+	}
+
+	public void deleteEmp(Integer empid) 
+	{
+		employeeRepo.deleteById(empid);
 	}	
 }
