@@ -1,10 +1,12 @@
 package com.wipro.boot.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,9 +23,17 @@ public class EmployeeController
 	@Autowired
 	private EmployeeService empService;
 	
-	// http://localhost:8081/employee/save
+	
 	@RequestMapping(value = "/save",method = RequestMethod.POST)
 	public ResponseEntity<WebResponse> saveEmp(@RequestBody Employee emp) 
+	{			
+		boolean status = empService.saveEmployee(emp);
+		WebResponse response = new WebResponse(status, emp);
+		return new ResponseEntity<WebResponse>(HttpStatus.OK).ok(response);
+	}
+	
+	@RequestMapping(value = "/update",method = RequestMethod.POST)
+	public ResponseEntity<WebResponse> updateEmp(@RequestBody Employee emp) 
 	{			
 		boolean status = empService.saveEmployee(emp);
 		WebResponse response = new WebResponse(status, emp);
@@ -37,4 +47,16 @@ public class EmployeeController
 		WebResponse response = new WebResponse(true, list);
 		return new ResponseEntity<WebResponse>(HttpStatus.OK).ok(response);
 	} 
+	
+	@RequestMapping(value = "/get/{id}",method = RequestMethod.POST)
+	public ResponseEntity<WebResponse> getEmp(@PathVariable(name = "id") Integer empid)
+	{
+		WebResponse response = null;
+		Optional<Employee> optional = empService.get(empid);
+		if(optional.isPresent())
+			response = new WebResponse(true,optional.get());
+		else
+			response = new WebResponse(false,"Invalid Employee Id !",null);		
+		return new ResponseEntity<WebResponse>(HttpStatus.OK).ok(response);
+	}	
 }

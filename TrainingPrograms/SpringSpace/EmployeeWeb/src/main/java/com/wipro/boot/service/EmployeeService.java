@@ -1,6 +1,7 @@
 package com.wipro.boot.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class EmployeeService
 	{
 		try 
 		{
-			employeeRepo.save(emp);
+			employeeRepo.save(emp);			
 			return true;
 		}catch(Exception ex) {
 			System.err.println(ex.getMessage());
@@ -29,5 +30,10 @@ public class EmployeeService
 	public List<Employee> list() 
 	{	
 		return employeeRepo.findAll();
+	}
+
+	public Optional<Employee> get(Integer empid) 
+	{
+		return employeeRepo.findById(empid);		
 	}	
 }
