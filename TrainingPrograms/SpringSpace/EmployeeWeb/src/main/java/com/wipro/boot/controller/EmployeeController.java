@@ -1,5 +1,7 @@
 package com.wipro.boot.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +24,17 @@ public class EmployeeController
 	// http://localhost:8081/employee/save
 	@RequestMapping(value = "/save",method = RequestMethod.POST)
 	public ResponseEntity<WebResponse> saveEmp(@RequestBody Employee emp) 
-	{
+	{			
 		boolean status = empService.saveEmployee(emp);
 		WebResponse response = new WebResponse(status, emp);
 		return new ResponseEntity<WebResponse>(HttpStatus.OK).ok(response);
 	}
+	
+	@RequestMapping(value = "/list",method = RequestMethod.GET)
+	public ResponseEntity<WebResponse> listEmp()
+	{
+		List<Employee> list = empService.list();
+		WebResponse response = new WebResponse(true, list);
+		return new ResponseEntity<WebResponse>(HttpStatus.OK).ok(response);
+	} 
 }

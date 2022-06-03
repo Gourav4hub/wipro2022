@@ -5,52 +5,34 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "employee_info")
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee 
 {
 	@Id
 	@Column(name = "emp_id")
-	private int empId;
+	private Integer empId;
 	
-	@Column(name = "emp_name")
+	@Column(name = "emp_name" , nullable = false)
 	private String empName;
 	
-	@Column(name = "emp_mail")
+	@Column(name = "emp_mail" , nullable = false , unique = true)
 	private String empEmail;
 	
-	@Column(name = "emp_salary")
-	private float empSalary;
-
-	public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-
-	public String getEmpName() {
-		return empName;
-	}
-
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
-
-	public String getEmpEmail() {
-		return empEmail;
-	}
-
-	public void setEmpEmail(String empEmail) {
-		this.empEmail = empEmail;
-	}
-
-	public float getEmpSalary() {
-		return empSalary;
-	}
-
-	public void setEmpSalary(float empSalary) {
-		this.empSalary = empSalary;
-	}
+	@Column(name = "emp_salary", nullable = true)
+	private Float empSalary;
+	
+	@Column(name = "emp_city" , nullable = false)
+	private String empCity;	
 }

@@ -1,5 +1,7 @@
 package com.wipro.boot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +24,10 @@ public class EmployeeService
 			System.err.println(ex.getMessage());
 		}
 		return false;
+	}
+
+	public List<Employee> list() 
+	{	
+		return employeeRepo.findAll();
 	}	
 }
