@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +25,8 @@ public class EmployeeController
 	private EmployeeService empService;
 	
 	
-	@RequestMapping(value = "/save",method = RequestMethod.POST)
+	@RequestMapping(value = "/save",method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<WebResponse> saveEmp(@RequestBody Employee emp) 
 	{			
 		boolean status = empService.saveEmployee(emp);
@@ -32,7 +34,8 @@ public class EmployeeController
 		return ResponseEntity.ok(response);
 	}
 	
-	@RequestMapping(value = "/update",method = RequestMethod.POST)
+	@RequestMapping(value = "/update",method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<WebResponse> updateEmp(@RequestBody Employee emp) 
 	{			
 		boolean status = empService.saveEmployee(emp);
@@ -40,7 +43,7 @@ public class EmployeeController
 		return ResponseEntity.ok(response);
 	}
 	
-	@RequestMapping(value = "/list",method = RequestMethod.GET)
+	@RequestMapping(value = "/list",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<WebResponse> listEmp()
 	{
 		List<Employee> list = empService.list();
@@ -48,7 +51,7 @@ public class EmployeeController
 		return ResponseEntity.ok(response);
 	} 
 	
-	@RequestMapping(value = "/get/{id}",method = RequestMethod.POST)
+	@RequestMapping(value = "/get/{id}",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<WebResponse> getEmp(@PathVariable(name = "id") Integer empid)
 	{
 		WebResponse response = null;
@@ -60,7 +63,7 @@ public class EmployeeController
 		return ResponseEntity.ok(response);
 	}	
 	
-	@RequestMapping(value = "/delete/{id}",method = RequestMethod.POST)
+	@RequestMapping(value = "/delete/{id}",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<WebResponse> deleteEmp(@PathVariable(name = "id") Integer empid)
 	{
 		WebResponse response = null;
