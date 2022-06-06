@@ -3,6 +3,8 @@ package com.wipro.boot.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,7 +34,8 @@ public class Employee
 	
 	@Column(name = "emp_salary", nullable = true)
 	private Float empSalary;
-	
-	@Column(name = "emp_city" , nullable = false)
-	private String empCity;	
+		
+	@OneToOne
+	@JoinColumn(name = "emp_address")
+	private Address address;	
 }
