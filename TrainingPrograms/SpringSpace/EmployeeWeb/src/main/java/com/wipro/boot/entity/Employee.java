@@ -1,11 +1,22 @@
 package com.wipro.boot.entity;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +31,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "empId")
 public class Employee 
 {
 	@Id
@@ -36,6 +50,9 @@ public class Employee
 	private Float empSalary;
 		
 	@OneToOne
-	@JoinColumn(name = "emp_address")
-	private Address address;	
+	@JoinColumn(name = "emp_address")	
+	private Address address;
+	
+	@OneToMany(mappedBy = "employee")
+	private List<SalaryRecord> salaryRecords;
 }

@@ -23,6 +23,7 @@ public class AddressService
 		return addressRepo.findAll();
 	}
 
+	@Transactional
 	public Optional<Address> get(Integer id) 
 	{
 		return addressRepo.findById(id);		

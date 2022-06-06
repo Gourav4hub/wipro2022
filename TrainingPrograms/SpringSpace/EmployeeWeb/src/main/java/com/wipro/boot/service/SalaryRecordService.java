@@ -9,23 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wipro.boot.entity.Employee;
+import com.wipro.boot.entity.SalaryRecord;
 import com.wipro.boot.repository.AddressRepository;
 import com.wipro.boot.repository.EmployeeRepository;
+import com.wipro.boot.repository.SalaryRecordRepository;
 
 @Service
-public class EmployeeService 
+public class SalaryRecordService 
 {
 	@Autowired
-	private EmployeeRepository employeeRepo;
-	@Autowired
-	private AddressRepository addressRepo;
+	private SalaryRecordRepository salaryRecordRepo;
+	
 
-	public boolean saveEmployee(Employee emp) 
+	public boolean saveRecord(SalaryRecord record) 
 	{
 		try 
 		{
-			addressRepo.save(emp.getAddress());
-			employeeRepo.save(emp);			
+			salaryRecordRepo.save(record);			
 			return true;
 		}catch(Exception ex) {
 			System.err.println(ex.getMessage());
@@ -33,19 +33,18 @@ public class EmployeeService
 		return false;
 	}
 
-	public List<Employee> list() 
+	public List<SalaryRecord> list() 
 	{	
-		return employeeRepo.findAll();
+		return salaryRecordRepo.findAll();
+	}
+	
+	public Optional<SalaryRecord> get(Integer id) 
+	{
+		return salaryRecordRepo.findById(id);		
 	}
 
-	@Transactional
-	public Optional<Employee> get(Integer empid) 
+	public void deleteRecord(Integer id) 
 	{
-		return employeeRepo.findById(empid);		
-	}
-
-	public void deleteEmp(Integer empid) 
-	{
-		employeeRepo.deleteById(empid);
+		salaryRecordRepo.deleteById(id);
 	}	
 }
