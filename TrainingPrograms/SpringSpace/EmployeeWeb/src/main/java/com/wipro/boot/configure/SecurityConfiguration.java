@@ -38,18 +38,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		return NoOpPasswordEncoder.getInstance();
 	}
 	
-//	@Override
-//	protected void configure(HttpSecurity http) throws Exception 
-//	{
-//		http.csrf().disable();
-//		http.authorizeRequests().antMatchers("/").permitAll()
-//		.antMatchers("/employee/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER")
-//		.antMatchers("/address/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER")
-//		.antMatchers("/salaryrecord/**").hasRole("OFFICE_ADMIN")
-//		.and().formLogin().loginPage("/login").permitAll()
-//        .defaultSuccessUrl("/")
-//        .and()
-//        .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
-//		.and().httpBasic();
-//	}
+	@Override
+	protected void configure(HttpSecurity http) throws Exception 
+	{		
+		http.authorizeRequests()
+		.antMatchers("/").permitAll()
+		.antMatchers("/login").permitAll()
+		.antMatchers("/salaryrecord/**").hasRole("OFFICE_ADMIN")
+		.antMatchers("/employee/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER")
+		.antMatchers("/address/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER")		
+		.and()
+		.exceptionHandling().accessDeniedPage("/accessDenied")
+		.and().httpBasic();
+		
+		super.configure(http);
+	}
 }
