@@ -1,0 +1,42 @@
+Java : Servlets and JSP
+
+Spring MVC
+Spring Boot Framework
+
+	FrameWork
+	
+MVC Architecture : Model View Controller
+
+	View : HTML , CSS , Javascript , Bootstrap .....
+	Model : Database and Business Logics
+	Controller : Request and Response	
+	
+	Controller >> Model >> Controller >> View >> Response View
+	
+MVC-2 Architecture : Model View Controller
+
+	View : HTML , CSS , Javascript , Bootstrap .....
+	Model : 
+		Database 		 : Model
+		Business Logics : Service
+	Controller : Request and Response	
+	
+	Controller >> Service >> Model >> Service >> Controller >> View >> Response View	
+	
+	
+	Controller Layer
+	Service Layer
+	Database Layer
+	View Layer
+	
+********************************************************************
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
