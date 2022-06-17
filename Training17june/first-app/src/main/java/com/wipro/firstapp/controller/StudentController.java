@@ -1,6 +1,7 @@
 package com.wipro.firstapp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,10 +28,19 @@ public class StudentController
 	@GetMapping("/feescalculate")
 	public String calculate(@RequestParam(value = "college") float collegeFees,
 			@RequestParam(value = "transport") float transport,
-			@RequestParam(value = "canteen") float canteen) 
+			@RequestParam(value = "canteen",required = false,defaultValue = "0") float canteen) 
 	{
 		float total = collegeFees + transport + canteen;
 		return "Fees : "+total;
+	}
+	
+	// http://localhost:8080/student/get2/vikas/23
+	@GetMapping("/get2/{name}/{age}")
+	public String get2(@PathVariable(value = "name") String studentName,
+			@PathVariable(value = "age") int studentAge) 
+	{
+		String str = studentName + " : " + studentAge;
+		return str;
 	}
 	
 	
