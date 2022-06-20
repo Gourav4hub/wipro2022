@@ -61,9 +61,9 @@ public class SecondController
 	}
 	
 	@PostMapping("/register")
-	public User register(@RequestBody User user)
+	public User register(@RequestBody User user) // JSON to Object
 	{
-		return user;
+		return user; // Object to JSON
 	}
 	
 	
