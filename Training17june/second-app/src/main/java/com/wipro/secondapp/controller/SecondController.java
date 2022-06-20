@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wipro.secondapp.model.User;
+
 @RestController
 @RequestMapping("/second")
 public class SecondController 
@@ -55,6 +57,13 @@ public class SecondController
 		String uname = (String) data.get("uname");
 		int age = (int) data.get("age");
 		return uname + " : " + age;
+		
+	}
+	
+	@PostMapping("/register")
+	public User register(@RequestBody User user)
+	{
+		return user;
 	}
 	
 	
