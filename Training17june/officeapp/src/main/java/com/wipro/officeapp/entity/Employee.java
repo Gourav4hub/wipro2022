@@ -1,4 +1,4 @@
-package com.wipro.officeapp.model;
+package com.wipro.officeapp.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

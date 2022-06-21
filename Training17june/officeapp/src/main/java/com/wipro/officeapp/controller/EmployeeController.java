@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wipro.officeapp.model.Employee;
+import com.wipro.officeapp.entity.Employee;
 import com.wipro.officeapp.repository.EmployeeRepository;
 import com.wipro.officeapp.response.WebResponse;
 
