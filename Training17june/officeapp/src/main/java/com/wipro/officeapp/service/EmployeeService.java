@@ -1,0 +1,44 @@
+package com.wipro.officeapp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.officeapp.entity.Employee;
+import com.wipro.officeapp.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService 
+{
+	@Autowired
+	private EmployeeRepository empRepo;
+	
+	public boolean saveEmployee(Employee emp) 
+	{
+		try {
+				empRepo.save(emp);
+				empRepo.flush();
+				return true;
+		}catch(Exception ex) {
+			System.err.println("Save Emp Error : " + ex.getMessage());
+			return false;
+		}
+	}
+	
+	public List<Employee> list(){
+		return empRepo.findAll();
+	}
+	
+	public boolean deleteEmployee(String eid) 
+	{
+		try {
+				empRepo.deleteById(eid);
+				empRepo.flush();
+				return true;
+		}catch(Exception ex) {
+			System.err.println("Del Emp Error : " + ex.getMessage());
+			return false;
+		}
+	}
+}
