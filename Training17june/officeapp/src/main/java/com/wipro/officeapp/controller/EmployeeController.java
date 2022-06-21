@@ -1,6 +1,8 @@
 package com.wipro.officeapp.controller;
 
+import java.lang.StackWalker.Option;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -49,12 +51,30 @@ public class EmployeeController
 		return ResponseEntity.ok(res);
 	}
 	
+	@GetMapping(value = "/get/{id}")
+	public ResponseEntity<WebResponse> getById(@PathVariable(value = "id") String eid)
+	{
+		Optional<Employee> opt = empService.get(eid);
+		if(opt.isEmpty())
+			return ResponseEntity.badRequest().body(new WebResponse(false, "Employee Not found !"));
+		else 
+		{
+			return ResponseEntity.ok(new WebResponse(true, opt.get()));
+		}
+	}
+	
 	@DeleteMapping(value = "/delete/{id}")
 	public ResponseEntity<WebResponse> deleteEmployee(@PathVariable(value = "id") String eid)
 	{
-		boolean status = empService.deleteEmployee(eid);
-		WebResponse res = new WebResponse(status, eid);
-		return ResponseEntity.ok(res);
+		Optional<Employee> opt = empService.get(eid);
+		if(opt.isEmpty())
+			return ResponseEntity.badRequest().body(new WebResponse(false, "Employee Not found !"));
+		else 
+		{		
+			boolean status = empService.deleteEmployee(eid);
+			WebResponse res = new WebResponse(status, eid);
+			return ResponseEntity.ok(res);
+		}
 	}
 	
 	

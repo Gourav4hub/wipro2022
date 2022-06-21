@@ -1,6 +1,7 @@
 package com.wipro.officeapp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,10 @@ public class EmployeeService
 	
 	public List<Employee> list(){
 		return empRepo.findAll();
+	}
+	
+	public Optional<Employee> get(String eid){
+		return empRepo.findById(eid);
 	}
 	
 	public boolean deleteEmployee(String eid) 
