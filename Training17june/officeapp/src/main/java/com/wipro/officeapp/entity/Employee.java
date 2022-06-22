@@ -1,9 +1,13 @@
 package com.wipro.officeapp.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -39,6 +43,9 @@ public class Employee
 	@OneToOne
 	@JoinColumn(name = "emp_address")
 	private Address address;
+	
+	@OneToMany(mappedBy = "employee")
+	private List<SalaryRecord> salaryRecords;
 }
 
 

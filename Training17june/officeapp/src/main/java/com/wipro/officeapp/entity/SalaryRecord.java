@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.wipro.officeapp.model.SalaryRecordModel;
 
 import lombok.Data;
@@ -18,6 +20,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "salary_record")
 @Data
 @NoArgsConstructor
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "recordId")
 public class SalaryRecord 
 {
 	public SalaryRecord(SalaryRecordModel record, Employee emp) 
