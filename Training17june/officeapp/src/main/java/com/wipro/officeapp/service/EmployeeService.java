@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wipro.officeapp.entity.Employee;
+import com.wipro.officeapp.repository.AddressRepository;
 import com.wipro.officeapp.repository.EmployeeRepository;
 
 @Service
@@ -15,9 +16,13 @@ public class EmployeeService
 	@Autowired
 	private EmployeeRepository empRepo;
 	
+	@Autowired
+	private AddressRepository addressRepo;
+	
 	public boolean saveEmployee(Employee emp) 
 	{
 		try {
+				addressRepo.save(emp.getAddress());
 				empRepo.save(emp);
 				empRepo.flush();
 				return true;
