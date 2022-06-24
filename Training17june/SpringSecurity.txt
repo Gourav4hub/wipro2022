@@ -1,0 +1,15 @@
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+***********************************************************************
+
+http://localhost:8080/login
+http://localhost:8080/logout
+
+***********************************************************************
+
+Spring Security
+	
+	1. Authentication : loginid / password
+	2. Authorization  :  
