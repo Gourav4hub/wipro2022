@@ -21,4 +21,8 @@ public class UserService
 			return false;
 		}
 	}
+	
+	public boolean isExistByName(String name) {
+		return userRepo.findByUsername(name).isPresent();
+	}
 }

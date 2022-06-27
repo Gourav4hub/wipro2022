@@ -28,6 +28,8 @@ public class Officeapp2Application implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception 
 	{
+		if(!userService.isExistByName("admin"))
+		{
 			Role rol1 = new Role();
 			rol1.setName("ROLE_OFFICE_ADMIN");
 			Role rol2 = new Role();
@@ -48,5 +50,6 @@ public class Officeapp2Application implements CommandLineRunner
 			roleService.saveRole(rol2);
 			roleService.saveRole(rol3);
 			userService.saveUser(user);
+		}
 	}
 }
