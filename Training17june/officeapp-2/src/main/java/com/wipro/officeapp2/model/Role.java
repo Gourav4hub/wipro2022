@@ -2,11 +2,14 @@ package com.wipro.officeapp2.model;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "role")
 @Data
+@NoArgsConstructor
 public class Role 
 {
     @Id
@@ -19,4 +22,5 @@ public class Role
 
     @Column(name = "description",nullable = true)
     private String description;
+    
 }
