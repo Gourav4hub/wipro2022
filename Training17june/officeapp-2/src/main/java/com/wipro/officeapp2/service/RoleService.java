@@ -16,8 +16,7 @@ public class RoleService {
 	public boolean saveRole(Role role) 
 	{
 		try{
-			roleRepo.save(role);
-			
+			roleRepo.save(role);			
 			return true;
 		}catch(Exception ex) {
 			System.err.println("Role Save Error : "+ex.getMessage());

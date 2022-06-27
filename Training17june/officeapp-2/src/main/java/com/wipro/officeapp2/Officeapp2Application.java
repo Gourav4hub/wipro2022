@@ -35,10 +35,6 @@ public class Officeapp2Application implements CommandLineRunner
 			Role rol3 = new Role();
 			rol3.setName("ROLE_OFFICE_HR");
 			
-			roleService.saveRole(rol1);
-			roleService.saveRole(rol2);
-			roleService.saveRole(rol3);
-			
 			Set<Role> roles = new HashSet<>();
 			roles.add(rol1);
 			
@@ -48,6 +44,9 @@ public class Officeapp2Application implements CommandLineRunner
 			user.setUsername("admin");
 			user.setRoles(roles);
 			
+//			roleService.saveRole(rol1);
+			roleService.saveRole(rol2);
+			roleService.saveRole(rol3);
 			userService.saveUser(user);
 	}
 }
