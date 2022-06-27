@@ -13,17 +13,19 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.wipro.officeapp2.service.UserService;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 {
 	@Autowired
-	DataSource dataSource;
+	private UserService userService;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
-	
+		auth.userDetailsService(userService);
 	}
 	
 //	@Bean
