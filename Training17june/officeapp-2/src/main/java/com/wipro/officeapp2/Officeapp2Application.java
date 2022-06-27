@@ -8,8 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.wipro.officeapp2.model.Role;
-import com.wipro.officeapp2.model.User;
+import com.wipro.officeapp2.entity.Role;
+import com.wipro.officeapp2.entity.User;
 import com.wipro.officeapp2.service.RoleService;
 import com.wipro.officeapp2.service.UserService;
 

@@ -3,7 +3,7 @@ package com.wipro.officeapp2.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wipro.officeapp2.model.User;
+import com.wipro.officeapp2.entity.User;
 import com.wipro.officeapp2.repository.UserRepository;
 
 @Service

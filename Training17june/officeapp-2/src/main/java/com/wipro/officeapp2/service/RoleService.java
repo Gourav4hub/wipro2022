@@ -3,8 +3,8 @@ package com.wipro.officeapp2.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wipro.officeapp2.model.Role;
-import com.wipro.officeapp2.model.User;
+import com.wipro.officeapp2.entity.Role;
+import com.wipro.officeapp2.entity.User;
 import com.wipro.officeapp2.repository.RoleRepository;
 import com.wipro.officeapp2.repository.UserRepository;
 

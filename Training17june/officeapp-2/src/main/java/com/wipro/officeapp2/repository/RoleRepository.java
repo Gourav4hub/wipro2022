@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.wipro.officeapp2.model.Role;
-import com.wipro.officeapp2.model.User;
+import com.wipro.officeapp2.entity.Role;
+import com.wipro.officeapp2.entity.User;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer>{

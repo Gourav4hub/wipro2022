@@ -1,4 +1,4 @@
-package com.wipro.officeapp2.model;
+package com.wipro.officeapp2.entity;
 
 import javax.persistence.*;
 
