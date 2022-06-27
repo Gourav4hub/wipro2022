@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.wipro.officeapp2.entity.Role;
 import com.wipro.officeapp2.entity.User;
@@ -40,9 +41,11 @@ public class Officeapp2Application implements CommandLineRunner
 			Set<Role> roles = new HashSet<>();
 			roles.add(rol1);
 			
+			BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
+			
 			User user = new User();
 			user.setEmail("admin@gmail.com");
-			user.setPassword("12345");
+			user.setPassword(encode.encode("12345"));
 			user.setUsername("admin");
 			user.setRoles(roles);
 			
