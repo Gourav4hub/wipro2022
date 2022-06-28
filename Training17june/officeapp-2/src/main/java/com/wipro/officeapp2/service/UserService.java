@@ -38,7 +38,8 @@ public class UserService implements UserDetailsService
 	{
         Set<SimpleGrantedAuthority> authorities = new HashSet();
         user.getRoles().forEach(role -> {
-            authorities.add(new SimpleGrantedAuthority("ROLE_OFFICE_" + role.getName().toUpperCase()));
+        	System.out.println("ROLE_OFFICE_" + role.getName().toUpperCase());
+            authorities.add(new SimpleGrantedAuthority(role.getName().toUpperCase()));
         });
         return authorities;
     }

@@ -43,9 +43,10 @@ public class EmployeeController
 		return ResponseEntity.ok(res);
 	}
 	
-	@GetMapping(value = "/list")
+	@PostMapping(value = "/list")
 	public ResponseEntity<WebResponse> listEmployee()
 	{
+		System.out.println("EMP List >>>>");
 		List<Employee> list =  empService.list();
 		WebResponse res = new WebResponse(true, list);
 		return ResponseEntity.ok(res);

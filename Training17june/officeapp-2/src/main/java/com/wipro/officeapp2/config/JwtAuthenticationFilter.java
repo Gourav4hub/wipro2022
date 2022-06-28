@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.wipro.officeapp2.entity.User;
+import com.wipro.officeapp2.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -26,8 +29,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Value("${jwt.token.prefix}")
     public String TOKEN_PREFIX;
 
-    @Resource(name = "userService")
-    private UserDetailsService userDetailsService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private TokenProvider jwtTokenUtil;
@@ -45,15 +48,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String header = req.getHeader(HEADER_STRING);
         String username = null;
         String authToken = null;
+        System.out.println(header);
         if (header != null && header.startsWith(TOKEN_PREFIX)) {
             authToken = header.replace(TOKEN_PREFIX,"");
+            
             try {
                 username = jwtTokenUtil.getUsernameFromToken(authToken);
                 
-                if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) 
+                if (username != null) 
                 {
 
-                    UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                    UserDetails userDetails = userService.loadUserByUsername(username);
+                    
+                    User s;
 
                     if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                         UsernamePasswordAuthenticationToken authentication = jwtTokenUtil.getAuthenticationToken(authToken, SecurityContextHolder.getContext().getAuthentication(), userDetails);
@@ -63,16 +70,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     }
                     chain.doFilter(req, res);
                 }else {
+                	System.out.println("aaya1");
                 	res.sendRedirect("/web/invalidToken");
                 }
             } catch (IllegalArgumentException e) {
                 logger.error("An error occurred while fetching Username from Token", e);
+                System.out.println("aaya2");
                 res.sendRedirect("/web/invalidToken");
             } catch (ExpiredJwtException e) {
                 logger.warn("The token has expired", e);
                 res.sendRedirect("/web/expireToken");
             } catch(SignatureException e){
                 logger.error("Authentication Failed. Username or Password not valid.");
+                System.out.println("aaya3");
                 res.sendRedirect("/web/invalidToken");
             }
         } else 

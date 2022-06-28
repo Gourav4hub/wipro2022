@@ -40,7 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/admin/**");
+		//web.ignoring().antMatchers("/admin/**");
 		super.configure(web);
 	}
 	
@@ -51,12 +51,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		http.csrf().disable();
 		
 		http.authorizeRequests()
-		.antMatchers("/office/**").permitAll()
 		.antMatchers("/employee/**").hasRole("OFFICE_ADMIN")
 		.antMatchers("/address/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER")
 		.antMatchers("/empsalary/**").hasAnyRole("OFFICE_ADMIN","OFFICE_MANAGER","OFFICE_HR")
 		.and()
-		.exceptionHandling().accessDeniedPage("/office/accessDenied");
+		 .exceptionHandling().accessDeniedPage("/web/accessDenied");
 		
 		http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 	}

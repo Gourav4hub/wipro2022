@@ -3,6 +3,7 @@ package com.wipro.officeapp2.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,6 +29,7 @@ public class AdminController
 	@PostMapping("/authenticate")
 	public ResponseEntity<WebResponse> authenticate(@RequestBody LoginUser loginUser)
 	{
+		try {
 		final Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(
 						loginUser.getUsername(),
@@ -37,5 +39,8 @@ public class AdminController
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		final String token = jwtTokenUtil.generateToken(authentication);
 		return ResponseEntity.ok(new WebResponse(true, token));
+		}catch(BadCredentialsException ex) {
+			return ResponseEntity.badRequest().body(new WebResponse(false, "Invalid User ID or Pasword"));
+		}
 	}
 }

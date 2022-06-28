@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.officeapp2.response.TokenResponse;
+import com.wipro.officeapp2.response.WebResponse;
 
 @RestController
 @RequestMapping("/web")
@@ -14,6 +15,13 @@ public class WebController
 	@GetMapping("/")
 	public String home() {
 		return "Welcome Office App";
+	}
+	
+	@RequestMapping("/accessDenied")
+	public ResponseEntity<WebResponse> accessDenied()
+	{
+		WebResponse response = new WebResponse(false, "Unauthenticated Access !");
+		return ResponseEntity.badRequest().body(response);
 	}
 	
 	@GetMapping("/expireToken")
